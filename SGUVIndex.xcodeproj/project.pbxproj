@@ -27,6 +27,7 @@
 		392F08732596EE7500F1BD77 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08712596EE7500F1BD77 /* Direction.swift */; };
 		392F08792596F1BA00F1BD77 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08782596F1BA00F1BD77 /* Mocks.swift */; };
 		396287862533219D00BF0AA7 /* UVWidgetNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */; };
+		399CC88925971C3400FBA6BE /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CC88825971C3400FBA6BE /* FeedbackGenerator.swift */; };
 		39D458722546E25A00150057 /* UVWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF7831252985C9003109FD /* UVWeatherService.swift */; };
 		39D458942546E41A00150057 /* UVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF782B25298166003109FD /* UVData.swift */; };
 		39D458AA2546E42100150057 /* UIWidgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF7877252994FA003109FD /* UIWidgetData.swift */; };
@@ -118,6 +119,7 @@
 		392F08712596EE7500F1BD77 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		392F08782596F1BA00F1BD77 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVWidgetNetwork.swift; sourceTree = "<group>"; };
+		399CC88825971C3400FBA6BE /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		39FF77C825296686003109FD /* SGUVIndex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGUVIndex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FF77CB25296686003109FD /* SGWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGWeatherApp.swift; sourceTree = "<group>"; };
 		39FF77CD25296686003109FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				392F08632596E54E00F1BD77 /* Date+Extension.swift */,
 				392F08712596EE7500F1BD77 /* Direction.swift */,
+				399CC88825971C3400FBA6BE /* FeedbackGenerator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				39FF7838252988FF003109FD /* HomeViewModel.swift in Sources */,
 				39D458D62546E43C00150057 /* UVIndex.swift in Sources */,
 				392F07E92594657700F1BD77 /* UVView.swift in Sources */,
+				399CC88925971C3400FBA6BE /* FeedbackGenerator.swift in Sources */,
 				392F086B2596ED3200F1BD77 /* HomeConstants.swift in Sources */,
 				392F085C2595D3A000F1BD77 /* Separator.swift in Sources */,
 				39FF77CC25296686003109FD /* SGWeatherApp.swift in Sources */,

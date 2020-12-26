@@ -19,13 +19,19 @@ enum HomeViewModelUIState {
 final class HomeViewModel: ObservableObject {
     
     private let service: UVWeatherService
+    private let feedbackGenerator: FeedbackGenerator
     private let constants: HomeConstants
     private var cancellables = Set<AnyCancellable>()
     private var direction: Direction = .none
     @Published var uiState: HomeViewModelUIState = .firstDisplay
     
-    init(with service: UVWeatherService, constants: HomeConstants) {
+    init(
+        with service: UVWeatherService,
+        feedbackGenerator: FeedbackGenerator,
+        constants: HomeConstants
+    ) {
         self.service = service
+        self.feedbackGenerator = feedbackGenerator
         self.constants = constants
     }
     
@@ -40,9 +46,6 @@ final class HomeViewModel: ObservableObject {
         if direction == .down, offset > constants.loadOffset {
             direction = .none
             load()
-            
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.success)
         }
     }
     
@@ -50,6 +53,7 @@ final class HomeViewModel: ObservableObject {
         guard canLoad() else { return }
         
         uiState = .loading
+        feedbackGenerator.generate(when: .success)
         
         Just.init(service)
             .delay(for: .seconds(constants.loadBufferTime), scheduler: RunLoop.main)
@@ -75,7 +79,6 @@ final class HomeViewModel: ObservableObject {
                 }
             }, receiveValue: { [weak self] value in
                 guard let self = self else { return }
-//                print(value)
                 self.uiState = .validData(value)
                 
                 WidgetCenter.shared.reloadAllTimelines()

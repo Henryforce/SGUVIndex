@@ -11,11 +11,17 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     
     var viewModel: HomeViewModel!
     var weatherService: UVWeatherService!
+    var feedbackGenerator: FeedbackGenerator!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         weatherService = UVWeatherServiceImpl()
-        viewModel = HomeViewModel(with: weatherService, constants: .standard)
+        feedbackGenerator = StandardFeedbackGenerator()
+        viewModel = HomeViewModel(
+            with: weatherService,
+            feedbackGenerator: feedbackGenerator,
+            constants: .standard
+        )
         
         return true
     }
