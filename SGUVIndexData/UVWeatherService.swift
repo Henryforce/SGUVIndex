@@ -11,6 +11,7 @@ import Combine
 public enum APIError: Error {
     case noNetwork
     case invalid
+    case outdated
     case unknown
 }
 

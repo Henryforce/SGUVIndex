@@ -15,7 +15,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         weatherService = UVWeatherServiceImpl()
-        viewModel = HomeViewModel(with: weatherService)
+        viewModel = HomeViewModel(with: weatherService, constants: .standard)
         
         return true
     }
@@ -28,7 +28,7 @@ struct SGWeatherApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(with: appDelegate.viewModel)
+            ContentView(with: appDelegate.viewModel, constants: .standard)
                 .edgesIgnoringSafeArea(.all)
         }
     }

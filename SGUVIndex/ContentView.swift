@@ -9,70 +9,104 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var offset: CGFloat = .zero
     @ObservedObject var viewModel: HomeViewModel
+    let constants: HomeConstants
     let foregroundColor: Color = .white
     
-    init(with viewModel: HomeViewModel) {
+    init(with viewModel: HomeViewModel, constants: HomeConstants) {
         self.viewModel = viewModel
-        UIScrollView.appearance().bounces = false
+        self.constants = constants
     }
     
     var body: some View {
-        VStack {
-            Spacer()
-            Text("UV Levels")
-                .fontWeight(.bold)
-                .font(.title)
-                .foregroundColor(foregroundColor)
-                .padding(.top, 40)
-                .padding(.bottom, 2)
-                
-            Text(Date(), style: .date)
-                .fontWeight(.semibold)
-                .font(.title2)
-                .foregroundColor(foregroundColor)
-                .padding(.bottom, 8)
-            
-            ScrollView {
-                LazyVStack {
-                    ForEach(viewModel.uvItems, id: \.date) { item in
-                        UVView(uvValue: item.uvValue,
-                               uvDescription: item.uvDescription,
-                               date: item.date)
-                    }
-                }
-            }
-            
-        }.onAppear() {
+        VStack(alignment: .center, spacing: .zero) {
+            displayView(when: viewModel.uiState)
+        }
+        .onAppear() {
             viewModel.load()
         }
-        .background(LinearGradient(gradient: Gradient(colors: [.purple, .white]), startPoint: UnitPoint(x: 0.0, y: 0.0), endPoint: UnitPoint(x: 2.0, y: 2.0)))
+        
     }
-}
-
-struct UVView: View {
-    let title: String = "UV"
-    let uvValue: String
-    let uvDescription: String
-    let date: Date
-    let foregroundColor: Color = .white
     
-    var body: some View {
-        HStack {
+    private func displayView(when uiState: HomeViewModelUIState) -> some View {
+        Group {
+            switch uiState {
+            case .loading, .firstDisplay:
+                displayViewWhenLoading()
+            case .validData(let uvItems):
+                displayViewWhenValidData(uvItems)
+            case .error(let message):
+                displayViewWhenError(message)
+            }
+        }
+    }
+    
+    private func displayViewWhenLoading() -> some View {
+        Group {
+            buildTitleViews()
+            ProgressView()
             Spacer()
-            Text(uvDescription + " - " + uvValue)
-                .fontWeight(.semibold)
-                .font(.title)
-                .foregroundColor(foregroundColor)
-            Text("at")
-                .fontWeight(.semibold)
-                .font(.caption2)
-                .foregroundColor(foregroundColor)
-            Text(date, style: .time)
-                .fontWeight(.semibold)
+        }
+        .offset(x: 0, y: self.offset)
+        .onAppear() {
+            self.offset = constants.loadOffset
+            withAnimation(.easeOut(duration: constants.loadBufferTime)) {
+                self.offset = .zero
+            }
+        }
+    }
+    
+    private func displayViewWhenValidData(_ uvItems: [UVWidgetData]) -> some View {
+        ScrollViewOffset { offset in
+            viewModel.scrollWasUpdated(with: offset)
+        } content: {
+            LazyVStack(alignment: .center, spacing: 4) {
+                buildTitleViews()
+                ForEach(uvItems.indices, id: \.self) { index in
+                    Separator()
+                    UVView(
+                        uvValue: uvItems[index].uvValue,
+                        uvDescription: uvItems[index].uvDescription,
+                        date: uvItems[index].date,
+                        index: index
+                    )
+                }
+            }
+        }
+    }
+    
+    private func displayViewWhenError(_ message: String) -> some View {
+        Group {
+            buildTitleViews()
+            Text(message)
                 .font(.caption)
-                .foregroundColor(foregroundColor)
-            Spacer()
+                .fontWeight(.bold)
+//            .foregroundColor(foregroundColor)
+        }
+    }
+    
+    private func buildTitleViews() -> some View {
+        Group {
+            HStack {
+                Spacer()
+                VStack {
+                    Text("Singapore")
+                        .font(.custom("Roboto-Black", size: 24))
+                    Text("UV Levels")
+                        .font(.custom("Roboto-Regular", size: 24))
+                }
+                Spacer()
+                VStack {
+                    Text(Date().monthComponent)
+                        .font(.custom("Roboto-Regular", size: 20))
+                    Text(Date().dayComponent)
+                        .font(.custom("Roboto-Black", size: 30))
+                }
+                Spacer()
+            }
+            .padding(.top, 32)
+            .padding(.bottom, 16)
         }
     }
 }
