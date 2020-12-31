@@ -1,0 +1,22 @@
+/* 
+  LocalizedString.strings
+  SGUVIndex
+
+  Created by Henry Javier Serrano Echeverria on 30/12/20.
+  
+*/
+
+"singapore_title" = "Singapur";
+"uv_levels" = "Índice UV";
+"uv_title" = "UV";
+"last_updated_title" = "Última Actualización";
+
+"data_gov_sg_outdated" = "Data.gov.sg se encuentra actualmente desactualizado. Por favor intente más tarde.";
+"data_gov_sg_error" = "Data.gov.sg está experimentando problemas. Nos disculpamos por la incoveniencia.";
+"unknown_error_message" = "Un error inesperado acaba de ocurrir. Nos disculpamos por la incoveniencia.";
+
+"uv_low" = "Bajo";
+"uv_moderate" = "Moderado";
+"uv_high" = "Alto";
+"uv_very_high" = "Muy Alto";
+"uv_extreme" = "Extremo";

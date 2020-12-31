@@ -23,7 +23,6 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        
         UVWidgetNetwork.getData(currentDate: Date()) { (data, nextUpdate) in
             let timeline = Timeline(entries: data,
                                     policy: .after(nextUpdate))
@@ -41,7 +40,7 @@ struct StaticWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             UVWidgetView(data: entry)
         }
-        .configurationDisplayName("SGWeather")
+        .configurationDisplayName(Localization.localize(.uvLevels))
         .description("View UV data")
     }
 }

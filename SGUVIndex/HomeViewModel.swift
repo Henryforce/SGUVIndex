@@ -35,6 +35,11 @@ final class HomeViewModel: ObservableObject {
         self.constants = constants
     }
     
+    func viewDidAppear() {
+        guard case .firstDisplay = uiState else { return }
+        load()
+    }
+    
     func scrollWasUpdated(with offset: CGFloat) {
         if direction == .none {
             guard !offset.isZero else { return }
@@ -43,22 +48,23 @@ final class HomeViewModel: ObservableObject {
             direction = .none
         }
         
-        if direction == .down, offset > constants.loadOffset {
+        if direction == .down, offset >= constants.loadOffset {
             direction = .none
             load()
         }
     }
     
-    func load() {
+    private func load() {
         guard canLoad() else { return }
         
         uiState = .loading
-        feedbackGenerator.generate(when: .success)
+        feedbackGenerator.selectionChanged()
         
         Just.init(service)
             .delay(for: .seconds(constants.loadBufferTime), scheduler: RunLoop.main)
             .flatMap { $0.fetchUV() }
             .tryMap { data -> [UVWidgetData] in
+//                throw APIError.outdated
                 guard let firstItem = data.items.first else { throw APIError.invalid }
                 guard Calendar.current.isDateInToday(firstItem.timestamp) else { throw APIError.outdated }
                 return firstItem.records.compactMap { record -> UVWidgetData? in
@@ -79,24 +85,26 @@ final class HomeViewModel: ObservableObject {
                 }
             }, receiveValue: { [weak self] value in
                 guard let self = self else { return }
-                self.uiState = .validData(value)
                 
+                self.feedbackGenerator.notificationOccurred(.success)
+                self.uiState = .validData(value)
                 WidgetCenter.shared.reloadAllTimelines()
             }).store(in: &cancellables)
     }
     
     private func handleError(_ error: Error) {
+        feedbackGenerator.notificationOccurred(.error)
         if let apiError = error as? APIError {
             switch apiError {
             case .outdated:
-                uiState = .error("Data.gov.sg's data is currently outdated. Please try again later.")
+                uiState = .error(Localization.localize(.dataGovSGOutdatedMessage))
                 break
             default:
-                uiState = .error("Data.gov.sg is currently experiencing issues. Sorry for the inconvenience.")
+                uiState = .error(Localization.localize(.dataGovSGErrorMessage))
                 break
             }
         } else {
-            uiState = .error("An unknown error has just happened. Sorry for the inconvenience.")
+            uiState = .error(Localization.localize(.unknownErrorMessage))
         }
     }
     

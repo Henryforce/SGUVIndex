@@ -36,7 +36,7 @@ final class UVWidgetNetwork: NSObject, URLSessionDelegate {
                 let uvData = Self.converter(data: jsonData)
                 completion(uvData, validationStatus.nextDate)
             } catch{
-                print(error.localizedDescription)
+//                print(error.localizedDescription)
                 completion([UVWidgetData.previewData], validationStatus.nextDate)
             }
         }.resume()

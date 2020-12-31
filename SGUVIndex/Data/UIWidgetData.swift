@@ -26,4 +26,8 @@ extension UVWidgetData {
                      uvValue: "-",
                      uvDescription: "")
     }()
+    
+    var isValueValid: Bool {
+        uvValue != "-"
+    }
 }

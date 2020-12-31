@@ -8,17 +8,40 @@
 import UIKit
 
 protocol FeedbackGenerator {
-    func generate(when feedbackType: UINotificationFeedbackGenerator.FeedbackType)
+    func impactOcurred()
+    func impactOccurred(intensity: CGFloat)
+    func selectionChanged()
+    func notificationOccurred(_ feedbackType: UINotificationFeedbackGenerator.FeedbackType)
 }
 
 final class StandardFeedbackGenerator: FeedbackGenerator {
-    private let generator: UINotificationFeedbackGenerator
+    private let impactFeedbackGenerator: UIImpactFeedbackGenerator
+    private let selectionFeedbackGenerator: UISelectionFeedbackGenerator
+    private let notificationFeedbackGenerator: UINotificationFeedbackGenerator
     
-    init(generator: UINotificationFeedbackGenerator = UINotificationFeedbackGenerator()) {
-        self.generator = generator
+    init(
+        impactFeedbackGenerator: UIImpactFeedbackGenerator = UIImpactFeedbackGenerator(),
+        selectionFeedbackGenerator: UISelectionFeedbackGenerator = UISelectionFeedbackGenerator(),
+        notificationFeedbackGenerator: UINotificationFeedbackGenerator = UINotificationFeedbackGenerator()
+    ) {
+        self.impactFeedbackGenerator = impactFeedbackGenerator
+        self.selectionFeedbackGenerator = selectionFeedbackGenerator
+        self.notificationFeedbackGenerator = notificationFeedbackGenerator
     }
     
-    func generate(when feedbackType: UINotificationFeedbackGenerator.FeedbackType) {
-        generator.notificationOccurred(feedbackType)
+    func impactOcurred() {
+        impactFeedbackGenerator.impactOccurred()
+    }
+    
+    func impactOccurred(intensity: CGFloat) {
+        impactFeedbackGenerator.impactOccurred(intensity: intensity)
+    }
+    
+    func selectionChanged() {
+        selectionFeedbackGenerator.selectionChanged()
+    }
+    
+    func notificationOccurred(_ feedbackType: UINotificationFeedbackGenerator.FeedbackType) {
+        notificationFeedbackGenerator.notificationOccurred(feedbackType)
     }
 }

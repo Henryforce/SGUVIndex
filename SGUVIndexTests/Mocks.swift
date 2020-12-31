@@ -5,7 +5,7 @@
 //  Created by Henry Javier Serrano Echeverria on 26/12/20.
 //
 
-import Foundation
+import UIKit
 import Combine
 @testable import SGUVIndex
 
@@ -15,6 +15,32 @@ final class MockUVWeatherService: UVWeatherService {
         Just(data)
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
+    }
+}
+
+final class MockFeedbackGenerator: FeedbackGenerator {
+    var impactOcurredWasCalledCount = 0
+    func impactOcurred() {
+        impactOcurredWasCalledCount += 1
+    }
+    
+    var impactOcurredWithIntensityWasCalledCount = 0
+    var impactOcurredWithIntensityValue: CGFloat?
+    func impactOccurred(intensity: CGFloat) {
+        impactOcurredWithIntensityWasCalledCount += 1
+        impactOcurredWithIntensityValue = intensity
+    }
+    
+    var selectionChangedWasCalledCount = 0
+    func selectionChanged() {
+        selectionChangedWasCalledCount += 1
+    }
+    
+    var notificationOccurredWasCalledCount = 0
+    var notificationOccurredValue: UINotificationFeedbackGenerator.FeedbackType?
+    func notificationOccurred(_ feedbackType: UINotificationFeedbackGenerator.FeedbackType) {
+        notificationOccurredWasCalledCount += 1
+        notificationOccurredValue = feedbackType
     }
 }
 
@@ -64,7 +90,7 @@ extension HomeConstants {
     static var testing: HomeConstants {
         HomeConstants(
             loadBufferTime: .zero,
-            loadOffset: .zero
+            loadOffset: 30.0
         )
     }
 }

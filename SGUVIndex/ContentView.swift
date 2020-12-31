@@ -24,7 +24,7 @@ struct ContentView: View {
             displayView(when: viewModel.uiState)
         }
         .onAppear() {
-            viewModel.load()
+            viewModel.viewDidAppear()
         }
         
     }
@@ -77,12 +77,16 @@ struct ContentView: View {
     }
     
     private func displayViewWhenError(_ message: String) -> some View {
-        Group {
-            buildTitleViews()
-            Text(message)
-                .font(.caption)
-                .fontWeight(.bold)
-//            .foregroundColor(foregroundColor)
+        ScrollViewOffset { offset in
+            viewModel.scrollWasUpdated(with: offset)
+        } content: {
+            LazyVStack(alignment: .center, spacing: 0) {
+                buildTitleViews()
+                Text(message)
+                    .font(Font.init(.black, size: 14))
+                    .multilineTextAlignment(.center)
+                    .padding()
+            }
         }
     }
     
@@ -91,17 +95,17 @@ struct ContentView: View {
             HStack {
                 Spacer()
                 VStack {
-                    Text("Singapore")
-                        .font(.custom("Roboto-Black", size: 24))
-                    Text("UV Levels")
-                        .font(.custom("Roboto-Regular", size: 24))
+                    Text(Localization.localize(.singapore))
+                        .font(.init(.black, size: 24))
+                    Text(Localization.localize(.uvLevels))
+                        .font(.init(.regular, size: 24))
                 }
                 Spacer()
                 VStack {
                     Text(Date().monthComponent)
-                        .font(.custom("Roboto-Regular", size: 20))
+                        .font(.init(.regular, size: 20))
                     Text(Date().dayComponent)
-                        .font(.custom("Roboto-Black", size: 30))
+                        .font(.init(.black, size: 30))
                 }
                 Spacer()
             }

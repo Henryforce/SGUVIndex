@@ -37,11 +37,11 @@ public enum UVIndex {
     
     public func name() -> String {
         switch self {
-        case .low: return "Low"
-        case .moderate: return "Moderate"
-        case .high: return "High"
-        case .veryHigh: return "Very High"
-        case .extreme: return "Extreme"
+        case .low: return Localization.localize(.uvLow)
+        case .moderate: return Localization.localize(.uvModerate)
+        case .high: return Localization.localize(.uvHigh)
+        case .veryHigh: return Localization.localize(.uvVeryHigh)
+        case .extreme: return Localization.localize(.uvExtreme)
         }
     }
     

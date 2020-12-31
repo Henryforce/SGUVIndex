@@ -28,6 +28,14 @@
 		392F08792596F1BA00F1BD77 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08782596F1BA00F1BD77 /* Mocks.swift */; };
 		396287862533219D00BF0AA7 /* UVWidgetNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */; };
 		399CC88925971C3400FBA6BE /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CC88825971C3400FBA6BE /* FeedbackGenerator.swift */; };
+		39AEE065259CA0A500A88636 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE05B259CA01400A88636 /* Color+Extensions.swift */; };
+		39AEE06A259CA82D00A88636 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE05B259CA01400A88636 /* Color+Extensions.swift */; };
+		39AEE074259CA90A00A88636 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE073259CA90A00A88636 /* Font+Extension.swift */; };
+		39AEE079259CA92000A88636 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE073259CA90A00A88636 /* Font+Extension.swift */; };
+		39AEE07F259CB26500A88636 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE07E259CB26500A88636 /* Localization.swift */; };
+		39AEE084259CB6E100A88636 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE07E259CB26500A88636 /* Localization.swift */; };
+		39AEE094259CB91200A88636 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39AEE097259CB91200A88636 /* Localizable.strings */; };
+		39AEE095259CB91200A88636 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39AEE097259CB91200A88636 /* Localizable.strings */; };
 		39D458722546E25A00150057 /* UVWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF7831252985C9003109FD /* UVWeatherService.swift */; };
 		39D458942546E41A00150057 /* UVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF782B25298166003109FD /* UVData.swift */; };
 		39D458AA2546E42100150057 /* UIWidgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF7877252994FA003109FD /* UIWidgetData.swift */; };
@@ -120,6 +128,13 @@
 		392F08782596F1BA00F1BD77 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVWidgetNetwork.swift; sourceTree = "<group>"; };
 		399CC88825971C3400FBA6BE /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
+		39AEE05B259CA01400A88636 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		39AEE073259CA90A00A88636 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		39AEE07E259CB26500A88636 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		39AEE096259CB91200A88636 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		39AEE09C259CB9F300A88636 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		39AEE0A1259CB9FA00A88636 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		39AEE0AA259CC1A900A88636 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		39FF77C825296686003109FD /* SGUVIndex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGUVIndex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FF77CB25296686003109FD /* SGWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGWeatherApp.swift; sourceTree = "<group>"; };
 		39FF77CD25296686003109FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -209,6 +224,7 @@
 				392F083B2594880D00F1BD77 /* Roboto-Bold.ttf */,
 				392F083C2594880D00F1BD77 /* Roboto-Regular.ttf */,
 				392F08452594886700F1BD77 /* Roboto-Black.ttf */,
+				39AEE073259CA90A00A88636 /* Font+Extension.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -216,6 +232,7 @@
 		392F08622596E54200F1BD77 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				39AEE05B259CA01400A88636 /* Color+Extensions.swift */,
 				392F08632596E54E00F1BD77 /* Date+Extension.swift */,
 				392F08712596EE7500F1BD77 /* Direction.swift */,
 				399CC88825971C3400FBA6BE /* FeedbackGenerator.swift */,
@@ -233,6 +250,15 @@
 				392F086A2596ED3200F1BD77 /* HomeConstants.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		39E7D319259D597B00BD5FAB /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				39AEE07E259CB26500A88636 /* Localization.swift */,
+				39AEE097259CB91200A88636 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		39FF77BF25296686003109FD = {
@@ -264,6 +290,7 @@
 		39FF77CA25296686003109FD /* SGUVIndex */ = {
 			isa = PBXGroup;
 			children = (
+				39E7D319259D597B00BD5FAB /* Localization */,
 				392F08622596E54200F1BD77 /* Utils */,
 				392F07FD2594855000F1BD77 /* Fonts */,
 				392F07E72594656500F1BD77 /* Views */,
@@ -486,6 +513,9 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				ja,
+				de,
 			);
 			mainGroup = 39FF77BF25296686003109FD;
 			packageReferences = (
@@ -513,6 +543,7 @@
 				392F08462594886700F1BD77 /* Roboto-Black.ttf in Resources */,
 				392F083F2594880D00F1BD77 /* Roboto-Regular.ttf in Resources */,
 				392F083D2594880D00F1BD77 /* Roboto-Bold.ttf in Resources */,
+				39AEE094259CB91200A88636 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +569,7 @@
 				392F083E2594880D00F1BD77 /* Roboto-Bold.ttf in Resources */,
 				39FF7807252966D1003109FD /* Assets.xcassets in Resources */,
 				392F08472594886700F1BD77 /* Roboto-Black.ttf in Resources */,
+				39AEE095259CB91200A88636 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,10 +588,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				39D458722546E25A00150057 /* UVWeatherService.swift in Sources */,
+				39AEE084259CB6E100A88636 /* Localization.swift in Sources */,
 				392F08642596E54E00F1BD77 /* Date+Extension.swift in Sources */,
 				392F08552595944000F1BD77 /* ScrollViewOffset.swift in Sources */,
 				39D458E22546E47000150057 /* UIWidgetData.swift in Sources */,
 				39FF77CE25296686003109FD /* ContentView.swift in Sources */,
+				39AEE06A259CA82D00A88636 /* Color+Extensions.swift in Sources */,
 				39FF7838252988FF003109FD /* HomeViewModel.swift in Sources */,
 				39D458D62546E43C00150057 /* UVIndex.swift in Sources */,
 				392F07E92594657700F1BD77 /* UVView.swift in Sources */,
@@ -568,6 +602,7 @@
 				392F085C2595D3A000F1BD77 /* Separator.swift in Sources */,
 				39FF77CC25296686003109FD /* SGWeatherApp.swift in Sources */,
 				39D458942546E41A00150057 /* UVData.swift in Sources */,
+				39AEE074259CA90A00A88636 /* Font+Extension.swift in Sources */,
 				392F08722596EE7500F1BD77 /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +631,7 @@
 			files = (
 				39FF782225296AA4003109FD /* UVWidgetView.swift in Sources */,
 				39D458AA2546E42100150057 /* UIWidgetData.swift in Sources */,
+				39AEE07F259CB26500A88636 /* Localization.swift in Sources */,
 				39D458DC2546E45700150057 /* UVData.swift in Sources */,
 				392F085D2595D3A000F1BD77 /* Separator.swift in Sources */,
 				39FF7805252966D0003109FD /* StaticWidget.swift in Sources */,
@@ -604,7 +640,9 @@
 				396287862533219D00BF0AA7 /* UVWidgetNetwork.swift in Sources */,
 				392F08562595944000F1BD77 /* ScrollViewOffset.swift in Sources */,
 				392F086C2596ED3200F1BD77 /* HomeConstants.swift in Sources */,
+				39AEE079259CA92000A88636 /* Font+Extension.swift in Sources */,
 				392F08652596E54E00F1BD77 /* Date+Extension.swift in Sources */,
+				39AEE065259CA0A500A88636 /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,11 +679,26 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		39AEE097259CB91200A88636 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39AEE096259CB91200A88636 /* en */,
+				39AEE09C259CB9F300A88636 /* es */,
+				39AEE0A1259CB9FA00A88636 /* ja */,
+				39AEE0AA259CC1A900A88636 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		39FF77EB25296687003109FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -707,6 +760,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

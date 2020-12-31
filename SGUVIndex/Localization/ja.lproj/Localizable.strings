@@ -1,0 +1,22 @@
+/* 
+  LocalizedString.strings
+  SGUVIndex
+
+  Created by Henry Javier Serrano Echeverria on 30/12/20.
+  
+*/
+
+"singapore_title" = "シンガポール";
+"uv_levels" = "紫外線ーUV";
+"uv_title" = "紫外線ーUV";
+"last_updated_title" = "最後のアプデート";
+
+"data_gov_sg_outdated" = "Data.gov.sgのデータは現在古くなっています。 後でもう一度やり直してください。";
+"data_gov_sg_error" = "Data.gov.sgで現在問題が発生しています。 ご不便おかけしてすみません。";
+"unknown_error_message" = "不明なエラーが発生しました。 ご不便おかけしてすみません。";
+
+"uv_low" = "弱い";
+"uv_moderate" = "中程度";
+"uv_high" = "強い";
+"uv_very_high" = "非常に強い";
+"uv_extreme" = "極端に強い";

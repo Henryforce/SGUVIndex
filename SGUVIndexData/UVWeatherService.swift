@@ -19,18 +19,15 @@ public protocol UVWeatherService {
     func fetchUV() -> AnyPublisher<UVData, Error>
 }
 
-final class UVWeatherServiceImpl: UVWeatherService {
+final class StandardUVWeatherService: UVWeatherService {
     
-    let url = URL(string: "https://api.data.gov.sg/v1/environment/uv-index")!
+    private let url = URL(string: "https://api.data.gov.sg/v1/environment/uv-index")!
     
     init() {}
     
     func fetchUV() -> AnyPublisher<UVData, Error> {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        
-        print(UVWidgetData.previewData.date)
-        
         return URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: UVData.self, decoder: decoder)

@@ -10,49 +10,30 @@ import WidgetKit
 
 struct UVWidgetView: View {
     let data: UVWidgetData
-    let foregroundColor: Color = .white
+//    let foregroundColor: Color = .white
     
     var body: some View {
-        VStack {
-            Text("Singapore")
-                .fontWeight(.heavy)
-                .foregroundColor(foregroundColor)
+        VStack(spacing: 2) {
             Spacer()
-            Text("UV")
-                .fontWeight(.bold)
-                .font(.title2)
-                .foregroundColor(foregroundColor)
-            HStack {
-                Spacer()
+            Text(Localization.localize(.singapore))
+                .font(.init(.bold, size: 16))
+            Text(Localization.localize(.uv))
+                .font(.init(.regular, size: 12))
+            Separator()
+            Text(data.uvValue)
+//            Text("1")
+            if data.isValueValid {
                 Text(data.uvDescription)
-                    .fontWeight(.bold)
-                    .font(.title2)
-                    .foregroundColor(foregroundColor)
-                Text(data.uvValue)
-                    .fontWeight(.semibold)
-                    .font(.title3)
-                    .foregroundColor(foregroundColor)
-                Spacer()
             }
-            Spacer()
-            Text("Last Updated")
-                .fontWeight(.medium)
-                .font(.footnote)
-                .foregroundColor(foregroundColor)
+//            Text("Low")
+            Separator()
+            Text(Localization.localize(.lastUpdated))
+                .font(.init(.regular, size: 9))
             Text(data.date, style: .time)
-                .fontWeight(.light)
-                .font(.caption)
-                .foregroundColor(foregroundColor)
+                .font(.init(.regular, size: 9))
+            Spacer()
         }
-        .padding(.leading, 4)
-        .padding(.trailing, 4)
-        .padding(.top, 16)
-        .padding(.bottom, 16)
-        .background(LinearGradient(gradient: Gradient(colors: [.purple, .white]), startPoint: UnitPoint(x: 0.0, y: 0.0), endPoint: UnitPoint(x: 0.0, y: 5.0)))
-//        .background(LinearGradient(gradient: Gradient(colors: [data.backgroundColor, .white]), startPoint: UnitPoint(x: 0.0, y: 0.0), endPoint: UnitPoint(x: 0.0, y: 5.0)))
-//        .background(data.backgroundColor.opacity(0.4))
-//        .background(Color.green)
-//        .cornerRadius(5)
+        .background(Color.widgetBackground)
     }
 }
 
