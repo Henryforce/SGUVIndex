@@ -20,6 +20,7 @@ final class HomeViewModel: ObservableObject {
     
     private let service: UVWeatherService
     private let feedbackGenerator: FeedbackGenerator
+    private let userDefaults: UserDefaultsManager
     private let constants: HomeConstants
     private var cancellables = Set<AnyCancellable>()
     private var direction: Direction = .none
@@ -28,10 +29,12 @@ final class HomeViewModel: ObservableObject {
     init(
         with service: UVWeatherService,
         feedbackGenerator: FeedbackGenerator,
+        userDefaults: UserDefaultsManager,
         constants: HomeConstants
     ) {
         self.service = service
         self.feedbackGenerator = feedbackGenerator
+        self.userDefaults = userDefaults
         self.constants = constants
     }
     
@@ -63,16 +66,21 @@ final class HomeViewModel: ObservableObject {
         Just.init(service)
             .delay(for: .seconds(constants.loadBufferTime), scheduler: RunLoop.main)
             .flatMap { $0.fetchUV() }
-            .tryMap { data -> [UVWidgetData] in
-//                throw APIError.outdated
+            .tryMap { data -> UVData in
                 guard let firstItem = data.items.first else { throw APIError.invalid }
-                guard Calendar.current.isDateInToday(firstItem.timestamp) else { throw APIError.outdated }
-                return firstItem.records.compactMap { record -> UVWidgetData? in
+                guard Calendar.singapore.isDateInToday(firstItem.timestamp) else { throw APIError.outdated }
+                return data
+            }
+            .handleEvents(receiveOutput: { [weak self] data in
+                self?.handleEventsOnReceiveOutput(data)
+            })
+            .map { data -> [UVWidgetData] in
+                return data.items.first?.records.compactMap { record -> UVWidgetData? in
                     guard let uvIndex = UVIndex(from: record.value) else { return nil }
                     return UVWidgetData(date: record.timestamp,
                                         uvValue: String(record.value),
                                         uvDescription: uvIndex.name())
-                }
+                } ?? []
             }
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [weak self] completion in
@@ -84,12 +92,20 @@ final class HomeViewModel: ObservableObject {
                     break
                 }
             }, receiveValue: { [weak self] value in
-                guard let self = self else { return }
-                
-                self.feedbackGenerator.notificationOccurred(.success)
-                self.uiState = .validData(value)
-                WidgetCenter.shared.reloadAllTimelines()
+                self?.handleReceivedUVWidgetData(value)
             }).store(in: &cancellables)
+    }
+    
+    private func handleEventsOnReceiveOutput(_ data: UVData) {
+        if let encodedData = try? JSONEncoder.iso8601Encoder.encode(data) {
+            self.userDefaults.set(encodedData, forKey: UserDefaultsKeys.lastUVDataUpdated.rawValue)
+        }
+    }
+    
+    private func handleReceivedUVWidgetData(_ data: [UVWidgetData]) {
+        feedbackGenerator.notificationOccurred(.success)
+        uiState = .validData(data)
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     private func handleError(_ error: Error) {

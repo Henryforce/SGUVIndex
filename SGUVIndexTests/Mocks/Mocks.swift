@@ -10,9 +10,11 @@ import Combine
 @testable import SGUVIndex
 
 final class MockUVWeatherService: UVWeatherService {
+    var fetchUVWasCalledCount = 0
     var data: UVData = .dataToday
     func fetchUV() -> AnyPublisher<UVData, Error> {
-        Just(data)
+        fetchUVWasCalledCount += 1
+        return Just(data)
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
     }

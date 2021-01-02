@@ -8,29 +8,20 @@
 import Foundation
 import Combine
 
-public enum APIError: Error {
-    case noNetwork
-    case invalid
-    case outdated
-    case unknown
-}
-
 public protocol UVWeatherService {
     func fetchUV() -> AnyPublisher<UVData, Error>
 }
 
 final class StandardUVWeatherService: UVWeatherService {
     
-    private let url = URL(string: "https://api.data.gov.sg/v1/environment/uv-index")!
+    private static let urlString = URL(string: "https://api.data.gov.sg/v1/environment/uv-index")!
     
     init() {}
     
     func fetchUV() -> AnyPublisher<UVData, Error> {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        return URLSession.shared.dataTaskPublisher(for: url)
+        return URLSession.shared.dataTaskPublisher(for: Self.urlString)
             .map(\.data)
-            .decode(type: UVData.self, decoder: decoder)
+            .decode(type: UVData.self, decoder: JSONDecoder.iso8601Decoder)
             .eraseToAnyPublisher()
     }
     

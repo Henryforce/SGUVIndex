@@ -21,7 +21,7 @@ struct UVView: View {
     var body: some View {
         HStack(alignment: .center) {
             Text(date, style: .time)
-                .font(.custom("Roboto-Regular", size: 12))
+                .font(.init(.montserratRegular, size: 12))
 //                .foregroundColor(foregroundColor)
                 .frame(width: 80, alignment: .leading)
                 .padding(.zero)
@@ -29,7 +29,7 @@ struct UVView: View {
             Spacer()
             
             Text(uvValue)
-                .font(.custom("Roboto-Black", size: 36))
+                .font(.init(.montserratBold, size: 36))
 //                .foregroundColor(foregroundColor)
                 .frame(width: 80, alignment: .center)
                 .padding(.zero)
@@ -38,7 +38,7 @@ struct UVView: View {
             
             Text(uvDescription)
 //                .foregroundColor(foregroundColor)
-                .font(.custom("Roboto-Regular", size: 12))
+                .font(.init(.montserratRegular, size: 12))
                 .frame(width: 80, alignment: .trailing)
                 .padding(.zero)
         }

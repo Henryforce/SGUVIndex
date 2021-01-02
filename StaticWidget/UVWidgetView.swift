@@ -16,21 +16,21 @@ struct UVWidgetView: View {
         VStack(spacing: 2) {
             Spacer()
             Text(Localization.localize(.singapore))
-                .font(.init(.bold, size: 16))
+                .font(.init(.robotoBlack, size: 17))
             Text(Localization.localize(.uv))
-                .font(.init(.regular, size: 12))
+                .font(.init(.montserratRegular, size: 14))
             Separator()
             Text(data.uvValue)
-//            Text("1")
+                .font(.init(.montserratBold, size: 28))
             if data.isValueValid {
                 Text(data.uvDescription)
+                    .font(.init(.montserratRegular, size: 10))
             }
-//            Text("Low")
             Separator()
             Text(Localization.localize(.lastUpdated))
-                .font(.init(.regular, size: 9))
+                .font(.init(.montserratRegular, size: 9))
             Text(data.date, style: .time)
-                .font(.init(.regular, size: 9))
+                .font(.init(.montserratRegular, size: 9))
             Spacer()
         }
         .background(Color.widgetBackground)

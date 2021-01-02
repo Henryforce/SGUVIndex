@@ -8,5 +8,5 @@
 import SwiftUI
 
 extension Color {
-    static var widgetBackground: Color { Color.init("WidgetBackground") }
+    static var appBackground: Color { Color.init("AppBackground") }
 }

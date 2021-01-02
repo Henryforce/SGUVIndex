@@ -26,9 +26,7 @@
 		392F08722596EE7500F1BD77 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08712596EE7500F1BD77 /* Direction.swift */; };
 		392F08732596EE7500F1BD77 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08712596EE7500F1BD77 /* Direction.swift */; };
 		392F08792596F1BA00F1BD77 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08782596F1BA00F1BD77 /* Mocks.swift */; };
-		396287862533219D00BF0AA7 /* UVWidgetNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */; };
 		399CC88925971C3400FBA6BE /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CC88825971C3400FBA6BE /* FeedbackGenerator.swift */; };
-		39AEE065259CA0A500A88636 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE05B259CA01400A88636 /* Color+Extensions.swift */; };
 		39AEE06A259CA82D00A88636 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE05B259CA01400A88636 /* Color+Extensions.swift */; };
 		39AEE074259CA90A00A88636 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE073259CA90A00A88636 /* Font+Extension.swift */; };
 		39AEE079259CA92000A88636 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE073259CA90A00A88636 /* Font+Extension.swift */; };
@@ -43,11 +41,35 @@
 		39D458D62546E43C00150057 /* UVIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF78AA2529AA33003109FD /* UVIndex.swift */; };
 		39D458DC2546E45700150057 /* UVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF782B25298166003109FD /* UVData.swift */; };
 		39D458E22546E47000150057 /* UIWidgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF7877252994FA003109FD /* UIWidgetData.swift */; };
+		39E7D323259D6F2400BD5FAB /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39E7D320259D6F2400BD5FAB /* Montserrat-Bold.ttf */; };
+		39E7D324259D6F2400BD5FAB /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39E7D320259D6F2400BD5FAB /* Montserrat-Bold.ttf */; };
+		39E7D325259D6F2400BD5FAB /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39E7D321259D6F2400BD5FAB /* Montserrat-Regular.ttf */; };
+		39E7D326259D6F2400BD5FAB /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39E7D321259D6F2400BD5FAB /* Montserrat-Regular.ttf */; };
+		39E7D327259D6F2400BD5FAB /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39E7D322259D6F2400BD5FAB /* Montserrat-Black.ttf */; };
+		39E7D328259D6F2400BD5FAB /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39E7D322259D6F2400BD5FAB /* Montserrat-Black.ttf */; };
+		39E7D32E259D71A300BD5FAB /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39E7D32D259D71A200BD5FAB /* Montserrat-SemiBold.ttf */; };
+		39E7D32F259D71A300BD5FAB /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39E7D32D259D71A200BD5FAB /* Montserrat-SemiBold.ttf */; };
+		39E7D33E259D72D300BD5FAB /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D33C259D72D300BD5FAB /* Color+Extensions.swift */; };
+		39E7D352259D9B3400BD5FAB /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D351259D9B3400BD5FAB /* UserDefaultsManager.swift */; };
+		39E7D353259D9B3400BD5FAB /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D351259D9B3400BD5FAB /* UserDefaultsManager.swift */; };
+		39E7D361259DE25000BD5FAB /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D360259DE25000BD5FAB /* Calendar+Extensions.swift */; };
+		39E7D362259DE25000BD5FAB /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D360259DE25000BD5FAB /* Calendar+Extensions.swift */; };
+		39E7D368259DE4AF00BD5FAB /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D367259DE4AF00BD5FAB /* JSONDecoder+Extensions.swift */; };
+		39E7D369259DE4AF00BD5FAB /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D367259DE4AF00BD5FAB /* JSONDecoder+Extensions.swift */; };
+		39E7D371259DE6C100BD5FAB /* UVWidgetNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */; };
+		39E7D378259DE6D500BD5FAB /* UVWidgetNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */; };
+		39E7D380259DE74900BD5FAB /* MockUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D37F259DE74900BD5FAB /* MockUserDefaultsManager.swift */; };
+		39E7D38925A01C2400BD5FAB /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D38825A01C2400BD5FAB /* MockURLSessionDataTask.swift */; };
+		39E7D39125A01C3E00BD5FAB /* URLSessionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D39025A01C3E00BD5FAB /* URLSessionWrapper.swift */; };
+		39E7D39625A01C9800BD5FAB /* MockURLSessionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D39525A01C9800BD5FAB /* MockURLSessionWrapper.swift */; };
+		39E7D39A25A0236900BD5FAB /* URLSessionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D39025A01C3E00BD5FAB /* URLSessionWrapper.swift */; };
+		39E7D39F25A02B0100BD5FAB /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D39E25A02B0100BD5FAB /* APIError.swift */; };
+		39E7D3A325A02B0500BD5FAB /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7D39E25A02B0100BD5FAB /* APIError.swift */; };
 		39FF77CC25296686003109FD /* SGWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF77CB25296686003109FD /* SGWeatherApp.swift */; };
 		39FF77CE25296686003109FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF77CD25296686003109FD /* ContentView.swift */; };
 		39FF77D025296687003109FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39FF77CF25296687003109FD /* Assets.xcassets */; };
 		39FF77D325296687003109FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39FF77D225296687003109FD /* Preview Assets.xcassets */; };
-		39FF77DE25296687003109FD /* SGWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF77DD25296687003109FD /* SGWeatherTests.swift */; };
+		39FF77DE25296687003109FD /* UVWidgetNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF77DD25296687003109FD /* UVWidgetNetworkTests.swift */; };
 		39FF77E925296687003109FD /* SGWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF77E825296687003109FD /* SGWeatherUITests.swift */; };
 		39FF7800252966D0003109FD /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FF77FF252966D0003109FD /* WidgetKit.framework */; };
 		39FF7802252966D0003109FD /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FF7801252966D0003109FD /* SwiftUI.framework */; };
@@ -56,7 +78,6 @@
 		39FF780B252966D1003109FD /* StaticWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 39FF77FD252966D0003109FD /* StaticWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		39FF782225296AA4003109FD /* UVWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF7814252969C9003109FD /* UVWidgetView.swift */; };
 		39FF7838252988FF003109FD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF7837252988FF003109FD /* HomeViewModel.swift */; };
-		39FF7864252994D4003109FD /* SGWeatherDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF7863252994D4003109FD /* SGWeatherDataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,13 +101,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 39FF77FC252966D0003109FD;
 			remoteInfo = StaticWidgetExtension;
-		};
-		39FF7860252994D4003109FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 39FF77C025296686003109FD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 39FF77C725296686003109FD;
-			remoteInfo = SGWeather;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -135,6 +149,21 @@
 		39AEE09C259CB9F300A88636 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		39AEE0A1259CB9FA00A88636 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		39AEE0AA259CC1A900A88636 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		39E7D320259D6F2400BD5FAB /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		39E7D321259D6F2400BD5FAB /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		39E7D322259D6F2400BD5FAB /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		39E7D32D259D71A200BD5FAB /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		39E7D33C259D72D300BD5FAB /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		39E7D347259D7AA800BD5FAB /* SGUVIndex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SGUVIndex.entitlements; sourceTree = "<group>"; };
+		39E7D34C259D7AB800BD5FAB /* StaticWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StaticWidgetExtension.entitlements; sourceTree = "<group>"; };
+		39E7D351259D9B3400BD5FAB /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		39E7D360259DE25000BD5FAB /* Calendar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extensions.swift"; sourceTree = "<group>"; };
+		39E7D367259DE4AF00BD5FAB /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
+		39E7D37F259DE74900BD5FAB /* MockUserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultsManager.swift; sourceTree = "<group>"; };
+		39E7D38825A01C2400BD5FAB /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
+		39E7D39025A01C3E00BD5FAB /* URLSessionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionWrapper.swift; sourceTree = "<group>"; };
+		39E7D39525A01C9800BD5FAB /* MockURLSessionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionWrapper.swift; sourceTree = "<group>"; };
+		39E7D39E25A02B0100BD5FAB /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		39FF77C825296686003109FD /* SGUVIndex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGUVIndex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FF77CB25296686003109FD /* SGWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGWeatherApp.swift; sourceTree = "<group>"; };
 		39FF77CD25296686003109FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,7 +171,7 @@
 		39FF77D225296687003109FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		39FF77D425296687003109FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39FF77D925296687003109FD /* SGUVIndexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGUVIndexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		39FF77DD25296687003109FD /* SGWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGWeatherTests.swift; sourceTree = "<group>"; };
+		39FF77DD25296687003109FD /* UVWidgetNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVWidgetNetworkTests.swift; sourceTree = "<group>"; };
 		39FF77DF25296687003109FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39FF77E425296687003109FD /* SGUVIndexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGUVIndexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FF77E825296687003109FD /* SGWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGWeatherUITests.swift; sourceTree = "<group>"; };
@@ -159,7 +188,6 @@
 		39FF7837252988FF003109FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		39FF7856252994D4003109FD /* SGWeatherData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGWeatherData.h; sourceTree = "<group>"; };
 		39FF7857252994D4003109FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39FF785C252994D4003109FD /* SGUVIndexDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGUVIndexDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FF7863252994D4003109FD /* SGWeatherDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGWeatherDataTests.swift; sourceTree = "<group>"; };
 		39FF7865252994D4003109FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39FF7877252994FA003109FD /* UIWidgetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWidgetData.swift; sourceTree = "<group>"; };
@@ -198,13 +226,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39FF7859252994D4003109FD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -221,9 +242,8 @@
 		392F07FD2594855000F1BD77 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				392F083B2594880D00F1BD77 /* Roboto-Bold.ttf */,
-				392F083C2594880D00F1BD77 /* Roboto-Regular.ttf */,
-				392F08452594886700F1BD77 /* Roboto-Black.ttf */,
+				39E7D31F259D6F0300BD5FAB /* Roboto */,
+				39E7D31E259D6EFC00BD5FAB /* Montserrat */,
 				39AEE073259CA90A00A88636 /* Font+Extension.swift */,
 			);
 			path = Fonts;
@@ -236,6 +256,9 @@
 				392F08632596E54E00F1BD77 /* Date+Extension.swift */,
 				392F08712596EE7500F1BD77 /* Direction.swift */,
 				399CC88825971C3400FBA6BE /* FeedbackGenerator.swift */,
+				39E7D351259D9B3400BD5FAB /* UserDefaultsManager.swift */,
+				39E7D360259DE25000BD5FAB /* Calendar+Extensions.swift */,
+				39E7D367259DE4AF00BD5FAB /* JSONDecoder+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -261,9 +284,42 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		39E7D31E259D6EFC00BD5FAB /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				39E7D322259D6F2400BD5FAB /* Montserrat-Black.ttf */,
+				39E7D320259D6F2400BD5FAB /* Montserrat-Bold.ttf */,
+				39E7D32D259D71A200BD5FAB /* Montserrat-SemiBold.ttf */,
+				39E7D321259D6F2400BD5FAB /* Montserrat-Regular.ttf */,
+			);
+			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		39E7D31F259D6F0300BD5FAB /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				392F08452594886700F1BD77 /* Roboto-Black.ttf */,
+				392F083B2594880D00F1BD77 /* Roboto-Bold.ttf */,
+				392F083C2594880D00F1BD77 /* Roboto-Regular.ttf */,
+			);
+			path = Roboto;
+			sourceTree = "<group>";
+		};
+		39E7D38725A01BD200BD5FAB /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				392F08782596F1BA00F1BD77 /* Mocks.swift */,
+				39E7D37F259DE74900BD5FAB /* MockUserDefaultsManager.swift */,
+				39E7D38825A01C2400BD5FAB /* MockURLSessionDataTask.swift */,
+				39E7D39525A01C9800BD5FAB /* MockURLSessionWrapper.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		39FF77BF25296686003109FD = {
 			isa = PBXGroup;
 			children = (
+				39E7D34C259D7AB800BD5FAB /* StaticWidgetExtension.entitlements */,
 				39FF77CA25296686003109FD /* SGUVIndex */,
 				39FF77DC25296687003109FD /* SGUVIndexTests */,
 				39FF77E725296687003109FD /* SGUVIndexUITests */,
@@ -282,7 +338,6 @@
 				39FF77D925296687003109FD /* SGUVIndexTests.xctest */,
 				39FF77E425296687003109FD /* SGUVIndexUITests.xctest */,
 				39FF77FD252966D0003109FD /* StaticWidgetExtension.appex */,
-				39FF785C252994D4003109FD /* SGUVIndexDataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +345,7 @@
 		39FF77CA25296686003109FD /* SGUVIndex */ = {
 			isa = PBXGroup;
 			children = (
+				39E7D347259D7AA800BD5FAB /* SGUVIndex.entitlements */,
 				39E7D319259D597B00BD5FAB /* Localization */,
 				392F08622596E54200F1BD77 /* Utils */,
 				392F07FD2594855000F1BD77 /* Fonts */,
@@ -317,9 +373,9 @@
 		39FF77DC25296687003109FD /* SGUVIndexTests */ = {
 			isa = PBXGroup;
 			children = (
+				39E7D38725A01BD200BD5FAB /* Mocks */,
 				392F07DD25945A4F00F1BD77 /* HomeViewModelTests.swift */,
-				39FF77DD25296687003109FD /* SGWeatherTests.swift */,
-				392F08782596F1BA00F1BD77 /* Mocks.swift */,
+				39FF77DD25296687003109FD /* UVWidgetNetworkTests.swift */,
 				39FF77DF25296687003109FD /* Info.plist */,
 			);
 			path = SGUVIndexTests;
@@ -348,9 +404,9 @@
 			children = (
 				39FF7804252966D0003109FD /* StaticWidget.swift */,
 				39FF7814252969C9003109FD /* UVWidgetView.swift */,
-				3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */,
 				39FF7806252966D1003109FD /* Assets.xcassets */,
 				39FF7808252966D1003109FD /* Info.plist */,
+				39E7D33C259D72D300BD5FAB /* Color+Extensions.swift */,
 			);
 			path = StaticWidget;
 			sourceTree = "<group>";
@@ -377,6 +433,9 @@
 			isa = PBXGroup;
 			children = (
 				39FF7831252985C9003109FD /* UVWeatherService.swift */,
+				3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */,
+				39E7D39025A01C3E00BD5FAB /* URLSessionWrapper.swift */,
+				39E7D39E25A02B0100BD5FAB /* APIError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -459,24 +518,6 @@
 			productReference = 39FF77FD252966D0003109FD /* StaticWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		39FF785B252994D4003109FD /* SGUVIndexDataTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 39FF786F252994D4003109FD /* Build configuration list for PBXNativeTarget "SGUVIndexDataTests" */;
-			buildPhases = (
-				39FF7858252994D4003109FD /* Sources */,
-				39FF7859252994D4003109FD /* Frameworks */,
-				39FF785A252994D4003109FD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				39FF7861252994D4003109FD /* PBXTargetDependency */,
-			);
-			name = SGUVIndexDataTests;
-			productName = SGWeatherDataTests;
-			productReference = 39FF785C252994D4003109FD /* SGUVIndexDataTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -499,10 +540,6 @@
 					};
 					39FF77FC252966D0003109FD = {
 						CreatedOnToolsVersion = 12.0.1;
-					};
-					39FF785B252994D4003109FD = {
-						CreatedOnToolsVersion = 12.0.1;
-						TestTargetID = 39FF77C725296686003109FD;
 					};
 				};
 			};
@@ -528,7 +565,6 @@
 				39FF77D825296687003109FD /* SGUVIndexTests */,
 				39FF77E325296687003109FD /* SGUVIndexUITests */,
 				39FF77FC252966D0003109FD /* StaticWidgetExtension */,
-				39FF785B252994D4003109FD /* SGUVIndexDataTests */,
 			);
 		};
 /* End PBXProject section */
@@ -538,12 +574,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E7D325259D6F2400BD5FAB /* Montserrat-Regular.ttf in Resources */,
 				39FF77D325296687003109FD /* Preview Assets.xcassets in Resources */,
 				39FF77D025296687003109FD /* Assets.xcassets in Resources */,
 				392F08462594886700F1BD77 /* Roboto-Black.ttf in Resources */,
+				39E7D32E259D71A300BD5FAB /* Montserrat-SemiBold.ttf in Resources */,
 				392F083F2594880D00F1BD77 /* Roboto-Regular.ttf in Resources */,
 				392F083D2594880D00F1BD77 /* Roboto-Bold.ttf in Resources */,
 				39AEE094259CB91200A88636 /* Localizable.strings in Resources */,
+				39E7D323259D6F2400BD5FAB /* Montserrat-Bold.ttf in Resources */,
+				39E7D327259D6F2400BD5FAB /* Montserrat-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,17 +606,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				392F08402594880D00F1BD77 /* Roboto-Regular.ttf in Resources */,
+				39E7D328259D6F2400BD5FAB /* Montserrat-Black.ttf in Resources */,
 				392F083E2594880D00F1BD77 /* Roboto-Bold.ttf in Resources */,
+				39E7D326259D6F2400BD5FAB /* Montserrat-Regular.ttf in Resources */,
+				39E7D324259D6F2400BD5FAB /* Montserrat-Bold.ttf in Resources */,
 				39FF7807252966D1003109FD /* Assets.xcassets in Resources */,
+				39E7D32F259D71A300BD5FAB /* Montserrat-SemiBold.ttf in Resources */,
 				392F08472594886700F1BD77 /* Roboto-Black.ttf in Resources */,
 				39AEE095259CB91200A88636 /* Localizable.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39FF785A252994D4003109FD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,16 +628,22 @@
 				39AEE084259CB6E100A88636 /* Localization.swift in Sources */,
 				392F08642596E54E00F1BD77 /* Date+Extension.swift in Sources */,
 				392F08552595944000F1BD77 /* ScrollViewOffset.swift in Sources */,
+				39E7D39125A01C3E00BD5FAB /* URLSessionWrapper.swift in Sources */,
 				39D458E22546E47000150057 /* UIWidgetData.swift in Sources */,
 				39FF77CE25296686003109FD /* ContentView.swift in Sources */,
+				39E7D368259DE4AF00BD5FAB /* JSONDecoder+Extensions.swift in Sources */,
 				39AEE06A259CA82D00A88636 /* Color+Extensions.swift in Sources */,
 				39FF7838252988FF003109FD /* HomeViewModel.swift in Sources */,
 				39D458D62546E43C00150057 /* UVIndex.swift in Sources */,
+				39E7D39F25A02B0100BD5FAB /* APIError.swift in Sources */,
 				392F07E92594657700F1BD77 /* UVView.swift in Sources */,
 				399CC88925971C3400FBA6BE /* FeedbackGenerator.swift in Sources */,
 				392F086B2596ED3200F1BD77 /* HomeConstants.swift in Sources */,
 				392F085C2595D3A000F1BD77 /* Separator.swift in Sources */,
+				39E7D371259DE6C100BD5FAB /* UVWidgetNetwork.swift in Sources */,
 				39FF77CC25296686003109FD /* SGWeatherApp.swift in Sources */,
+				39E7D361259DE25000BD5FAB /* Calendar+Extensions.swift in Sources */,
+				39E7D352259D9B3400BD5FAB /* UserDefaultsManager.swift in Sources */,
 				39D458942546E41A00150057 /* UVData.swift in Sources */,
 				39AEE074259CA90A00A88636 /* Font+Extension.swift in Sources */,
 				392F08722596EE7500F1BD77 /* Direction.swift in Sources */,
@@ -611,8 +654,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39FF77DE25296687003109FD /* SGWeatherTests.swift in Sources */,
+				39E7D380259DE74900BD5FAB /* MockUserDefaultsManager.swift in Sources */,
+				39E7D38925A01C2400BD5FAB /* MockURLSessionDataTask.swift in Sources */,
+				39FF77DE25296687003109FD /* UVWidgetNetworkTests.swift in Sources */,
 				392F07DE25945A4F00F1BD77 /* HomeViewModelTests.swift in Sources */,
+				39E7D39625A01C9800BD5FAB /* MockURLSessionWrapper.swift in Sources */,
 				392F08792596F1BA00F1BD77 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,22 +681,19 @@
 				39D458DC2546E45700150057 /* UVData.swift in Sources */,
 				392F085D2595D3A000F1BD77 /* Separator.swift in Sources */,
 				39FF7805252966D0003109FD /* StaticWidget.swift in Sources */,
+				39E7D378259DE6D500BD5FAB /* UVWidgetNetwork.swift in Sources */,
 				39D458D02546E43B00150057 /* UVIndex.swift in Sources */,
+				39E7D3A325A02B0500BD5FAB /* APIError.swift in Sources */,
 				392F08732596EE7500F1BD77 /* Direction.swift in Sources */,
-				396287862533219D00BF0AA7 /* UVWidgetNetwork.swift in Sources */,
+				39E7D362259DE25000BD5FAB /* Calendar+Extensions.swift in Sources */,
 				392F08562595944000F1BD77 /* ScrollViewOffset.swift in Sources */,
 				392F086C2596ED3200F1BD77 /* HomeConstants.swift in Sources */,
+				39E7D353259D9B3400BD5FAB /* UserDefaultsManager.swift in Sources */,
+				39E7D33E259D72D300BD5FAB /* Color+Extensions.swift in Sources */,
+				39E7D39A25A0236900BD5FAB /* URLSessionWrapper.swift in Sources */,
 				39AEE079259CA92000A88636 /* Font+Extension.swift in Sources */,
+				39E7D369259DE4AF00BD5FAB /* JSONDecoder+Extensions.swift in Sources */,
 				392F08652596E54E00F1BD77 /* Date+Extension.swift in Sources */,
-				39AEE065259CA0A500A88636 /* Color+Extensions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39FF7858252994D4003109FD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				39FF7864252994D4003109FD /* SGWeatherDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,11 +714,6 @@
 			isa = PBXTargetDependency;
 			target = 39FF77FC252966D0003109FD /* StaticWidgetExtension */;
 			targetProxy = 39FF7809252966D1003109FD /* PBXContainerItemProxy */;
-		};
-		39FF7861252994D4003109FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 39FF77C725296686003109FD /* SGUVIndex */;
-			targetProxy = 39FF7860252994D4003109FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -818,6 +856,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SGUVIndex/SGUVIndex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SGUVIndex/Preview Content\"";
 				DEVELOPMENT_TEAM = LY87V7AVCG;
@@ -841,6 +880,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SGUVIndex/SGUVIndex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SGUVIndex/Preview Content\"";
 				DEVELOPMENT_TEAM = LY87V7AVCG;
@@ -943,6 +983,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = StaticWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LY87V7AVCG;
 				INFOPLIST_FILE = StaticWidget/Info.plist;
@@ -964,6 +1005,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = StaticWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LY87V7AVCG;
 				INFOPLIST_FILE = StaticWidget/Info.plist;
@@ -977,42 +1019,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		39FF7870252994D4003109FD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LY87V7AVCG;
-				INFOPLIST_FILE = SGUVIndexDataTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SGUVIndex.app/SGUVIndex";
-			};
-			name = Debug;
-		};
-		39FF7871252994D4003109FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LY87V7AVCG;
-				INFOPLIST_FILE = SGUVIndexDataTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SGUVIndex.app/SGUVIndex";
 			};
 			name = Release;
 		};
@@ -1060,15 +1066,6 @@
 			buildConfigurations = (
 				39FF780D252966D1003109FD /* Debug */,
 				39FF780E252966D1003109FD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		39FF786F252994D4003109FD /* Build configuration list for PBXNativeTarget "SGUVIndexDataTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				39FF7870252994D4003109FD /* Debug */,
-				39FF7871252994D4003109FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

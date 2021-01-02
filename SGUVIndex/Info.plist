@@ -7,6 +7,10 @@
 		<string>Roboto-Regular.ttf</string>
 		<string>Roboto-Bold.ttf</string>
 		<string>Roboto-Black.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
+		<string>Montserrat-Black.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

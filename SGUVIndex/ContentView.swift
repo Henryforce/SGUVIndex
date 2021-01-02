@@ -22,7 +22,7 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .center, spacing: .zero) {
             displayView(when: viewModel.uiState)
-        }
+        }.background(Color.appBackground)
         .onAppear() {
             viewModel.viewDidAppear()
         }
@@ -83,7 +83,7 @@ struct ContentView: View {
             LazyVStack(alignment: .center, spacing: 0) {
                 buildTitleViews()
                 Text(message)
-                    .font(Font.init(.black, size: 14))
+                    .font(Font.init(.montserratBold, size: 14))
                     .multilineTextAlignment(.center)
                     .padding()
             }
@@ -96,16 +96,16 @@ struct ContentView: View {
                 Spacer()
                 VStack {
                     Text(Localization.localize(.singapore))
-                        .font(.init(.black, size: 24))
+                        .font(.init(.montserratBold, size: 24))
                     Text(Localization.localize(.uvLevels))
-                        .font(.init(.regular, size: 24))
+                        .font(.init(.montserratRegular, size: 24))
                 }
                 Spacer()
                 VStack {
                     Text(Date().monthComponent)
-                        .font(.init(.regular, size: 20))
+                        .font(.init(.montserratRegular, size: 20))
                     Text(Date().dayComponent)
-                        .font(.init(.black, size: 30))
+                        .font(.init(.montserratBold, size: 30))
                 }
                 Spacer()
             }

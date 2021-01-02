@@ -7,26 +7,30 @@
 
 import WidgetKit
 import SwiftUI
-import Combine
 
 struct Provider: TimelineProvider {
     
-    var cancellable: AnyCancellable?
+    private let userDefaults = StandardUserDefaultsManager()
     
     func placeholder(in context: Context) -> UVWidgetData {
         UVWidgetData.previewData
     }
 
     func getSnapshot(in context: Context, completion: @escaping (UVWidgetData) -> ()) {
-        let entry = UVWidgetData.previewData
-        completion(entry)
+        completion(UVWidgetData.previewData)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        UVWidgetNetwork.getData(currentDate: Date()) { (data, nextUpdate) in
-            let timeline = Timeline(entries: data,
-                                    policy: .after(nextUpdate))
-            completion(timeline)
+        UVWidgetNetwork.getData(
+            currentDate: Date(),
+            userDefaults: userDefaults
+        ) { (data, nextUpdate) in
+            completion(
+                Timeline(
+                    entries: data,
+                    policy: .after(nextUpdate)
+                )
+            )
         }
     }
     
