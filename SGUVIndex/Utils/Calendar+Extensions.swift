@@ -10,9 +10,7 @@ import Foundation
 extension Calendar {
     static var singapore: Calendar = {
         var calendar = Calendar.current
-        if let timeZone = TimeZone(identifier: "SGT") {
-           calendar.timeZone = timeZone
-        }
+        calendar.timeZone = TimeZone(identifier: "GMT+8")!
         return calendar
     }()
 }
