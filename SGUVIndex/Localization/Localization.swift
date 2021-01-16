@@ -17,6 +17,7 @@ enum LocalizationKey: String {
     case dataGovSGOutdatedMessage = "data_gov_sg_outdated"
     case dataGovSGErrorMessage = "data_gov_sg_error"
     case unknownErrorMessage = "unknown_error_message"
+    case disclaimerMessage = "disclaimer_message"
     
     case uvLow = "uv_low"
     case uvModerate = "uv_moderate"

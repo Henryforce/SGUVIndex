@@ -26,7 +26,7 @@
 		392F08722596EE7500F1BD77 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08712596EE7500F1BD77 /* Direction.swift */; };
 		392F08732596EE7500F1BD77 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08712596EE7500F1BD77 /* Direction.swift */; };
 		392F08792596F1BA00F1BD77 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08782596F1BA00F1BD77 /* Mocks.swift */; };
-		399CC88925971C3400FBA6BE /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CC88825971C3400FBA6BE /* FeedbackGenerator.swift */; };
+		399CC88925971C3400FBA6BE /* HapticFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CC88825971C3400FBA6BE /* HapticFeedbackGenerator.swift */; };
 		39AEE06A259CA82D00A88636 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE05B259CA01400A88636 /* Color+Extensions.swift */; };
 		39AEE074259CA90A00A88636 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE073259CA90A00A88636 /* Font+Extension.swift */; };
 		39AEE079259CA92000A88636 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE073259CA90A00A88636 /* Font+Extension.swift */; };
@@ -141,7 +141,7 @@
 		392F08712596EE7500F1BD77 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		392F08782596F1BA00F1BD77 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVWidgetNetwork.swift; sourceTree = "<group>"; };
-		399CC88825971C3400FBA6BE /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
+		399CC88825971C3400FBA6BE /* HapticFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackGenerator.swift; sourceTree = "<group>"; };
 		39AEE05B259CA01400A88636 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		39AEE073259CA90A00A88636 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		39AEE07E259CB26500A88636 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 				39AEE05B259CA01400A88636 /* Color+Extensions.swift */,
 				392F08632596E54E00F1BD77 /* Date+Extension.swift */,
 				392F08712596EE7500F1BD77 /* Direction.swift */,
-				399CC88825971C3400FBA6BE /* FeedbackGenerator.swift */,
+				399CC88825971C3400FBA6BE /* HapticFeedbackGenerator.swift */,
 				39E7D351259D9B3400BD5FAB /* UserDefaultsManager.swift */,
 				39E7D360259DE25000BD5FAB /* Calendar+Extensions.swift */,
 				39E7D367259DE4AF00BD5FAB /* JSONDecoder+Extensions.swift */,
@@ -637,7 +637,7 @@
 				39D458D62546E43C00150057 /* UVIndex.swift in Sources */,
 				39E7D39F25A02B0100BD5FAB /* APIError.swift in Sources */,
 				392F07E92594657700F1BD77 /* UVView.swift in Sources */,
-				399CC88925971C3400FBA6BE /* FeedbackGenerator.swift in Sources */,
+				399CC88925971C3400FBA6BE /* HapticFeedbackGenerator.swift in Sources */,
 				392F086B2596ED3200F1BD77 /* HomeConstants.swift in Sources */,
 				392F085C2595D3A000F1BD77 /* Separator.swift in Sources */,
 				39E7D371259DE6C100BD5FAB /* UVWidgetNetwork.swift in Sources */,

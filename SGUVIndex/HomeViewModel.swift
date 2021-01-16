@@ -19,7 +19,7 @@ enum HomeViewModelUIState {
 final class HomeViewModel: ObservableObject {
     
     private let service: UVWeatherService
-    private let feedbackGenerator: FeedbackGenerator
+    private let feedbackGenerator: HapticFeedbackGenerator
     private let userDefaults: UserDefaultsManager
     private let constants: HomeConstants
     private var cancellables = Set<AnyCancellable>()
@@ -28,7 +28,7 @@ final class HomeViewModel: ObservableObject {
     
     init(
         with service: UVWeatherService,
-        feedbackGenerator: FeedbackGenerator,
+        feedbackGenerator: HapticFeedbackGenerator,
         userDefaults: UserDefaultsManager,
         constants: HomeConstants
     ) {
@@ -61,7 +61,7 @@ final class HomeViewModel: ObservableObject {
         guard canLoad() else { return }
         
         uiState = .loading
-        feedbackGenerator.selectionChanged()
+        feedbackGenerator.generate(.selectionChanged)
         
         Just.init(service)
             .delay(for: .seconds(constants.loadBufferTime), scheduler: RunLoop.main)
@@ -103,13 +103,13 @@ final class HomeViewModel: ObservableObject {
     }
     
     private func handleReceivedUVWidgetData(_ data: [UVWidgetData]) {
-        feedbackGenerator.notificationOccurred(.success)
+        feedbackGenerator.generate(.successNotification)
         uiState = .validData(data)
         WidgetCenter.shared.reloadAllTimelines()
     }
     
     private func handleError(_ error: Error) {
-        feedbackGenerator.notificationOccurred(.error)
+        feedbackGenerator.generate(.errorNotification)
         if let apiError = error as? APIError {
             switch apiError {
             case .outdated:

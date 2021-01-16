@@ -20,30 +20,38 @@ final class MockUVWeatherService: UVWeatherService {
     }
 }
 
-final class MockFeedbackGenerator: FeedbackGenerator {
-    var impactOcurredWasCalledCount = 0
-    func impactOcurred() {
-        impactOcurredWasCalledCount += 1
+final class MockFeedbackGenerator: HapticFeedbackGenerator {
+    
+    var generateEventWasCalledCount = 0
+    var generateEventValueStack = [HapticEvent]()
+    func generate(_ event: HapticEvent) {
+        generateEventWasCalledCount += 1
+        generateEventValueStack.append(event)
     }
     
-    var impactOcurredWithIntensityWasCalledCount = 0
-    var impactOcurredWithIntensityValue: CGFloat?
-    func impactOccurred(intensity: CGFloat) {
-        impactOcurredWithIntensityWasCalledCount += 1
-        impactOcurredWithIntensityValue = intensity
-    }
-    
-    var selectionChangedWasCalledCount = 0
-    func selectionChanged() {
-        selectionChangedWasCalledCount += 1
-    }
-    
-    var notificationOccurredWasCalledCount = 0
-    var notificationOccurredValue: UINotificationFeedbackGenerator.FeedbackType?
-    func notificationOccurred(_ feedbackType: UINotificationFeedbackGenerator.FeedbackType) {
-        notificationOccurredWasCalledCount += 1
-        notificationOccurredValue = feedbackType
-    }
+//    var impactOcurredWasCalledCount = 0
+//    func impactOcurred() {
+//        impactOcurredWasCalledCount += 1
+//    }
+//    
+//    var impactOcurredWithIntensityWasCalledCount = 0
+//    var impactOcurredWithIntensityValue: CGFloat?
+//    func impactOccurred(intensity: CGFloat) {
+//        impactOcurredWithIntensityWasCalledCount += 1
+//        impactOcurredWithIntensityValue = intensity
+//    }
+//    
+//    var selectionChangedWasCalledCount = 0
+//    func selectionChanged() {
+//        selectionChangedWasCalledCount += 1
+//    }
+//    
+//    var notificationOccurredWasCalledCount = 0
+//    var notificationOccurredValue: UINotificationFeedbackGenerator.FeedbackType?
+//    func notificationOccurred(_ feedbackType: UINotificationFeedbackGenerator.FeedbackType) {
+//        notificationOccurredWasCalledCount += 1
+//        notificationOccurredValue = feedbackType
+//    }
 }
 
 extension UVData {

@@ -11,13 +11,13 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     
     var viewModel: HomeViewModel!
     var weatherService: UVWeatherService!
-    var feedbackGenerator: FeedbackGenerator!
+    var feedbackGenerator: HapticFeedbackGenerator!
     var userDefaultsManager: UserDefaultsManager!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         weatherService = StandardUVWeatherService()
-        feedbackGenerator = StandardFeedbackGenerator()
+        feedbackGenerator = StandardHapticFeedbackGenerator()
         userDefaultsManager = StandardUserDefaultsManager()
         
         viewModel = HomeViewModel(

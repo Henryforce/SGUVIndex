@@ -14,6 +14,7 @@
 "data_gov_sg_outdated" = "Die Daten von Data.gov.sg sind derzeit veraltet. Bitte versuchen Sie es später noch einmal.";
 "data_gov_sg_error" = "Bei Data.gov.sg treten derzeit Probleme auf. Entschuldigung für die Unannehmlichkeiten.";
 "unknown_error_message" = "Ein unbekannter Fehler ist gerade aufgetreten. Entschuldigung für die Unannehmlichkeiten.";
+"disclaimer_message" = "Data werden stündlich von Data.gov.sg gesammelt. Von 7 bis 19 Uhr SGT.";
 
 "uv_low" = "Niedrig";
 "uv_moderate" = "Mäßig";

@@ -72,6 +72,7 @@ struct ContentView: View {
                         index: index
                     )
                 }
+                buildDisclaimerText()
             }
         }
     }
@@ -111,6 +112,15 @@ struct ContentView: View {
             }
             .padding(.top, 48)
             .padding(.bottom, 24)
+        }
+    }
+    
+    private func buildDisclaimerText() -> some View {
+        Group {
+            Text(Localization.localize(.disclaimerMessage))
+                .font(.init(.montserratRegular, size: 9))
+                .multilineTextAlignment(.center)
+                .padding()
         }
     }
 }

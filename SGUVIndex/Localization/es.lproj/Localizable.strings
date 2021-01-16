@@ -14,6 +14,7 @@
 "data_gov_sg_outdated" = "Data.gov.sg se encuentra actualmente desactualizado. Por favor intente más tarde.";
 "data_gov_sg_error" = "Data.gov.sg está experimentando problemas. Nos disculpamos por la incoveniencia.";
 "unknown_error_message" = "Un error inesperado acaba de ocurrir. Nos disculpamos por la incoveniencia.";
+"disclaimer_message" = "Información en tiempo real recabada cada hora desde Data.gov.sg. Disponible desde las 7AM hasta las 7PM SGT.";
 
 "uv_low" = "Bajo";
 "uv_moderate" = "Moderado";

@@ -59,9 +59,9 @@ final class HomeViewModelTests: XCTestCase {
         wait(for: [itemsExpectation], timeout: 0.005)
         XCTAssertFalse(items!.isEmpty)
         XCTAssertEqual(weatherService.fetchUVWasCalledCount, 1)
-        XCTAssertEqual(feedbackGenerator.selectionChangedWasCalledCount, 1)
-        XCTAssertEqual(feedbackGenerator.notificationOccurredWasCalledCount, 1)
-        XCTAssertEqual(feedbackGenerator.notificationOccurredValue!, .success)
+        XCTAssertEqual(feedbackGenerator.generateEventWasCalledCount, 2)
+        XCTAssertEqual(feedbackGenerator.generateEventValueStack.first!, HapticEvent.selectionChanged)
+        XCTAssertEqual(feedbackGenerator.generateEventValueStack[1], HapticEvent.successNotification)
         XCTAssertEqual(userDefaults.setValueForKeyWasCalledCount, 1)
         XCTAssertEqual(userDefaults.setValueForKeyDefaultName!, UserDefaultsKeys.lastUVDataUpdated.rawValue)
     }
@@ -85,9 +85,9 @@ final class HomeViewModelTests: XCTestCase {
         wait(for: [itemsExpectation], timeout: 0.005)
         XCTAssertFalse(items!.isEmpty)
         XCTAssertEqual(weatherService.fetchUVWasCalledCount, 1)
-        XCTAssertEqual(feedbackGenerator.selectionChangedWasCalledCount, 1)
-        XCTAssertEqual(feedbackGenerator.notificationOccurredWasCalledCount, 1)
-        XCTAssertEqual(feedbackGenerator.notificationOccurredValue!, .success)
+        XCTAssertEqual(feedbackGenerator.generateEventWasCalledCount, 2)
+        XCTAssertEqual(feedbackGenerator.generateEventValueStack.first!, HapticEvent.selectionChanged)
+        XCTAssertEqual(feedbackGenerator.generateEventValueStack[1], HapticEvent.successNotification)
         XCTAssertEqual(userDefaults.setValueForKeyWasCalledCount, 1)
         XCTAssertEqual(userDefaults.setValueForKeyDefaultName!, UserDefaultsKeys.lastUVDataUpdated.rawValue)
     }
@@ -109,9 +109,9 @@ final class HomeViewModelTests: XCTestCase {
         // Then
         wait(for: [itemsExpectation], timeout: 0.005)
         XCTAssertEqual(weatherService.fetchUVWasCalledCount, 1)
-        XCTAssertEqual(feedbackGenerator.selectionChangedWasCalledCount, 1)
-        XCTAssertEqual(feedbackGenerator.notificationOccurredWasCalledCount, 1)
-        XCTAssertEqual(feedbackGenerator.notificationOccurredValue!, .error)
+        XCTAssertEqual(feedbackGenerator.generateEventWasCalledCount, 2)
+        XCTAssertEqual(feedbackGenerator.generateEventValueStack.first!, HapticEvent.selectionChanged)
+        XCTAssertEqual(feedbackGenerator.generateEventValueStack[1], HapticEvent.errorNotification)
         XCTAssertEqual(userDefaults.setValueForKeyWasCalledCount, .zero)
         XCTAssertNil(userDefaults.setValueForKeyDefaultName)
     }
