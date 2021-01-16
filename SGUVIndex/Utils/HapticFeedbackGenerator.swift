@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum HapticEvent: Equatable {
+public enum HapticEvent: Equatable {
     case impact(CGFloat?)
     case selectionChanged
     case successNotification
@@ -15,7 +15,7 @@ enum HapticEvent: Equatable {
     case errorNotification
 }
 
-protocol HapticFeedbackGenerator {
+public protocol HapticFeedbackGenerator {
     func generate(_ event: HapticEvent)
 }
 

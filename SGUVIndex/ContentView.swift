@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct ContentView: View {
+public struct ContentView: View {
     
     @State private var offset: CGFloat = .zero
     @ObservedObject var viewModel: HomeViewModel
     let constants: HomeConstants
     let foregroundColor: Color = .white
     
-    init(with viewModel: HomeViewModel, constants: HomeConstants) {
+    public init(with viewModel: HomeViewModel, constants: HomeConstants) {
         self.viewModel = viewModel
         self.constants = constants
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .center, spacing: .zero) {
             displayView(when: viewModel.uiState)
         }.background(Color.appBackground)
@@ -118,6 +118,7 @@ struct ContentView: View {
     private func buildDisclaimerText() -> some View {
         Group {
             Text(Localization.localize(.disclaimerMessage))
+                .accessibilityIdentifier("Disclaimer")
                 .font(.init(.montserratRegular, size: 9))
                 .multilineTextAlignment(.center)
                 .padding()

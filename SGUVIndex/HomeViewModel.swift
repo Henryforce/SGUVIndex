@@ -16,7 +16,7 @@ enum HomeViewModelUIState {
     case error(String)
 }
 
-final class HomeViewModel: ObservableObject {
+public final class HomeViewModel: ObservableObject {
     
     private let service: UVWeatherService
     private let feedbackGenerator: HapticFeedbackGenerator
@@ -26,7 +26,7 @@ final class HomeViewModel: ObservableObject {
     private var direction: Direction = .none
     @Published var uiState: HomeViewModelUIState = .firstDisplay
     
-    init(
+    public init(
         with service: UVWeatherService,
         feedbackGenerator: HapticFeedbackGenerator,
         userDefaults: UserDefaultsManager,

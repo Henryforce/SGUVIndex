@@ -7,11 +7,11 @@
 
 import UIKit
 
-struct HomeConstants {
+public struct HomeConstants {
     let loadBufferTime: Double
     let loadOffset: CGFloat
     
-    init(
+    public init(
         loadBufferTime: Double,
         loadOffset: CGFloat
     ) {
@@ -21,7 +21,7 @@ struct HomeConstants {
 }
 
 extension HomeConstants {
-    static var standard: HomeConstants {
+    public static var standard: HomeConstants {
         HomeConstants(
             loadBufferTime: 0.35,
             loadOffset: 35
