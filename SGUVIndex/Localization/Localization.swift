@@ -25,6 +25,8 @@ enum LocalizationKey: String {
     case uvVeryHigh = "uv_very_high"
     case uvExtreme = "uv_extreme"
     
+    case dayFormat = "day_format"
+    
 }
 
 struct Localization {

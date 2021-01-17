@@ -48,6 +48,11 @@
                BlueprintName = "SGUVIndexUITests"
                ReferencedContainer = "container:SGUVIndex.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "AppStoreSnapshotUITests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">

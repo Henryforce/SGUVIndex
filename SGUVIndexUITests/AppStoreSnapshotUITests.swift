@@ -12,62 +12,29 @@ import XCTest
 
 class AppStoreSnapshotUITests: XCTestCase {
     
-    func testExample() throws {
+    func testGenerateFastlaneSnapshotsInLightMode() throws {
         let app = XCUIApplication()
         
+        // Launch arguments are being setup here as well:
         setupSnapshot(app)
-        
+        app.launchArguments.append("-lightMode") // Append instead of replace
         app.launch()
         
         _ = app.textViews["Disclaimer"].waitForExistence(timeout: 1.0)
         
-        snapshot("01UserEntries")
+        snapshot("MainLight")
     }
     
-//    func testView() {
-//        XCUIApplication().launch()
-////        let storyboard = UIStoryboard(name: "MainStoryboard", bundle: Bundle.mainBundle())
-////        let controller = storyboard.instantiateViewControllerWithIdentifier("LanguageSelectController")
-//        let constants = HomeConstants.standard
-//        let homeViewModel = HomeViewModel(
-//            with: MockUVWeatherService(),
-//            feedbackGenerator: MockHapticFeedbackGenerator(),
-//            userDefaults: MockUserDefaults(),
-//            constants: constants)
-//        let viewController = UIHostingController(
-//            rootView: ContentView(
-//                with: homeViewModel,
-//                constants: constants
-//            )
-//        )
-//        UIApplication.shared.keyWindow?.rootViewController = viewController
-//    }
-//    
-//    final class MockUVWeatherService: UVWeatherService {
-//        func fetchUV() -> AnyPublisher<UVData, Error> {
-//            Just(
-//                UVData(
-//                    items: [
-//                        
-//                    ],
-//                    apiInfo: APIInfo(status: "ACTIVE")
-//                )
-//            )
-//            .setFailureType(to: Error.self)
-//            .eraseToAnyPublisher()
-//        }
-//    }
-//    
-//    final class MockHapticFeedbackGenerator: HapticFeedbackGenerator {
-//        func generate(_ event: HapticEvent) { }
-//    }
-//    
-//    final class MockUserDefaults: UserDefaultsManager {
-//        func object(forKey defaultName: String) -> Any? { nil }
-//        
-//        func set(_ value: Any?, forKey defaultName: String) { }
-//        
-//        func removeObject(forKey defaultName: String) { }
-//    }
+    func testGenerateFastlaneSnapshotsInDarkMode() throws {
+        let app = XCUIApplication()
+
+        setupSnapshot(app)
+        app.launchArguments.append("-darkMode") // Append instead of replace
+        app.launch()
+
+        _ = app.textViews["Disclaimer"].waitForExistence(timeout: 1.0)
+
+        snapshot("MainDark")
+    }
 
 }

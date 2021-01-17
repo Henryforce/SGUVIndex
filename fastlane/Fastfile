@@ -38,3 +38,25 @@ desc "Take screenshots"
   lane :screenshot do
     snapshot
   end
+
+desc "Create ipa"
+  lane :build do
+    # 1
+    enable_automatic_code_signing
+    # 2
+    increment_build_number
+    # 3
+    gym
+  end
+
+desc "Upload to App Store"
+  lane :upload do
+    deliver
+  end
+
+desc "Upload to TestFlight"
+  lane :testflight do
+    pilot(
+      ipa:"./fastlane/builds/SGUVIndex.ipa",
+    )
+  end

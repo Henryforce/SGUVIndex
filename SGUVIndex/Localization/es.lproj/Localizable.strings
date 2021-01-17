@@ -21,3 +21,5 @@
 "uv_high" = "Alto";
 "uv_very_high" = "Muy Alto";
 "uv_extreme" = "Extremo";
+
+"day_format" = "d";

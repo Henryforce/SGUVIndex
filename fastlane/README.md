@@ -20,6 +20,21 @@ or alternatively using `brew install fastlane`
 fastlane screenshot
 ```
 Take screenshots
+### build
+```
+fastlane build
+```
+Create ipa
+### upload
+```
+fastlane upload
+```
+Upload to App Store
+### testflight
+```
+fastlane testflight
+```
+Upload to TestFlight
 
 ----
 
