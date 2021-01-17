@@ -14,7 +14,7 @@
 "data_gov_sg_outdated" = "Data.gov.sgのデータは現在古くなっています。 後でもう一度やり直してください。";
 "data_gov_sg_error" = "Data.gov.sgで現在問題が発生しています。 ご不便おかけしてすみません。";
 "unknown_error_message" = "不明なエラーが発生しました。 ご不便おかけしてすみません。";
-"disclaimer_message" = "シンガポール時間・午前７時から午後７時まで、１時間ごとにdata.gov.sgからデータが採集される。";
+"disclaimer_message" = "シンガポール時間・午前７時から午後７時まで、１時間ごとにData.gov.sgからデータが採集される。";
 
 "uv_low" = "弱い";
 "uv_moderate" = "中程度";
