@@ -1,0 +1,1 @@
+This app fetches UV Index data from Data.gov.sg. Data is updated every hour from 7AM to 7PM Singapore Time.

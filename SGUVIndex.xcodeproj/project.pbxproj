@@ -29,6 +29,9 @@
 		399CC88925971C3400FBA6BE /* HapticFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CC88825971C3400FBA6BE /* HapticFeedbackGenerator.swift */; };
 		39A3208425B2DC7C00D10484 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A3208325B2DC7C00D10484 /* SnapshotHelper.swift */; };
 		39AC0EEC25B30AC9006FE5BA /* AppStoreSnapshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AC0EEB25B30AC9006FE5BA /* AppStoreSnapshotUITests.swift */; };
+		39AC0EF725B3F070006FE5BA /* SnapshotMockUVWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AC0EF625B3F070006FE5BA /* SnapshotMockUVWeatherService.swift */; };
+		39AC0EFC25B41664006FE5BA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AC0EFB25B41664006FE5BA /* String+Extension.swift */; };
+		39AC0F0025B417C9006FE5BA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AC0EFB25B41664006FE5BA /* String+Extension.swift */; };
 		39AEE06A259CA82D00A88636 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE05B259CA01400A88636 /* Color+Extensions.swift */; };
 		39AEE074259CA90A00A88636 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE073259CA90A00A88636 /* Font+Extension.swift */; };
 		39AEE079259CA92000A88636 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AEE073259CA90A00A88636 /* Font+Extension.swift */; };
@@ -146,6 +149,8 @@
 		399CC88825971C3400FBA6BE /* HapticFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackGenerator.swift; sourceTree = "<group>"; };
 		39A3208325B2DC7C00D10484 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		39AC0EEB25B30AC9006FE5BA /* AppStoreSnapshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreSnapshotUITests.swift; sourceTree = "<group>"; };
+		39AC0EF625B3F070006FE5BA /* SnapshotMockUVWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotMockUVWeatherService.swift; sourceTree = "<group>"; };
+		39AC0EFB25B41664006FE5BA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		39AEE05B259CA01400A88636 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		39AEE073259CA90A00A88636 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		39AEE07E259CB26500A88636 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
@@ -263,6 +268,7 @@
 				39E7D351259D9B3400BD5FAB /* UserDefaultsManager.swift */,
 				39E7D360259DE25000BD5FAB /* Calendar+Extensions.swift */,
 				39E7D367259DE4AF00BD5FAB /* JSONDecoder+Extensions.swift */,
+				39AC0EFB25B41664006FE5BA /* String+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 				3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */,
 				39E7D39025A01C3E00BD5FAB /* URLSessionWrapper.swift */,
 				39E7D39E25A02B0100BD5FAB /* APIError.swift */,
+				39AC0EF625B3F070006FE5BA /* SnapshotMockUVWeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -465,8 +472,6 @@
 				39FF780A252966D1003109FD /* PBXTargetDependency */,
 			);
 			name = SGUVIndex;
-			packageProductDependencies = (
-			);
 			productName = SGWeather;
 			productReference = 39FF77C825296686003109FD /* SGUVIndex.app */;
 			productType = "com.apple.product-type.application";
@@ -535,17 +540,21 @@
 				TargetAttributes = {
 					39FF77C725296686003109FD = {
 						CreatedOnToolsVersion = 12.0.1;
+						ProvisioningStyle = Automatic;
 					};
 					39FF77D825296687003109FD = {
 						CreatedOnToolsVersion = 12.0.1;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 39FF77C725296686003109FD;
 					};
 					39FF77E325296687003109FD = {
 						CreatedOnToolsVersion = 12.0.1;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 39FF77C725296686003109FD;
 					};
 					39FF77FC252966D0003109FD = {
 						CreatedOnToolsVersion = 12.0.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -561,8 +570,6 @@
 				de,
 			);
 			mainGroup = 39FF77BF25296686003109FD;
-			packageReferences = (
-			);
 			productRefGroup = 39FF77C925296686003109FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -638,6 +645,7 @@
 				39D458E22546E47000150057 /* UIWidgetData.swift in Sources */,
 				39FF77CE25296686003109FD /* ContentView.swift in Sources */,
 				39E7D368259DE4AF00BD5FAB /* JSONDecoder+Extensions.swift in Sources */,
+				39AC0EFC25B41664006FE5BA /* String+Extension.swift in Sources */,
 				39AEE06A259CA82D00A88636 /* Color+Extensions.swift in Sources */,
 				39FF7838252988FF003109FD /* HomeViewModel.swift in Sources */,
 				39D458D62546E43C00150057 /* UVIndex.swift in Sources */,
@@ -645,6 +653,7 @@
 				392F07E92594657700F1BD77 /* UVView.swift in Sources */,
 				399CC88925971C3400FBA6BE /* HapticFeedbackGenerator.swift in Sources */,
 				392F086B2596ED3200F1BD77 /* HomeConstants.swift in Sources */,
+				39AC0EF725B3F070006FE5BA /* SnapshotMockUVWeatherService.swift in Sources */,
 				392F085C2595D3A000F1BD77 /* Separator.swift in Sources */,
 				39E7D371259DE6C100BD5FAB /* UVWidgetNetwork.swift in Sources */,
 				39FF77CC25296686003109FD /* SGWeatherApp.swift in Sources */,
@@ -691,6 +700,7 @@
 				39FF7805252966D0003109FD /* StaticWidget.swift in Sources */,
 				39E7D378259DE6D500BD5FAB /* UVWidgetNetwork.swift in Sources */,
 				39D458D02546E43B00150057 /* UVIndex.swift in Sources */,
+				39AC0F0025B417C9006FE5BA /* String+Extension.swift in Sources */,
 				39E7D3A325A02B0500BD5FAB /* APIError.swift in Sources */,
 				392F08732596EE7500F1BD77 /* Direction.swift in Sources */,
 				39E7D362259DE25000BD5FAB /* Calendar+Extensions.swift in Sources */,
@@ -866,6 +876,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SGUVIndex/SGUVIndex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SGUVIndex/Preview Content\"";
 				DEVELOPMENT_TEAM = LY87V7AVCG;
 				ENABLE_PREVIEWS = YES;
@@ -879,6 +890,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -890,6 +902,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SGUVIndex/SGUVIndex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SGUVIndex/Preview Content\"";
 				DEVELOPMENT_TEAM = LY87V7AVCG;
 				ENABLE_PREVIEWS = YES;
@@ -903,6 +916,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
     
@@ -13,10 +14,15 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     var weatherService: UVWeatherService!
     var feedbackGenerator: HapticFeedbackGenerator!
     var userDefaultsManager: UserDefaultsManager!
+    var colorScheme: ColorScheme?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        weatherService = StandardUVWeatherService()
+        if CommandLine.arguments.contains("-app_snapshot") {
+            weatherService = SnapshotMockUVWeatherService()
+        } else {
+            weatherService = StandardUVWeatherService()
+        }
         feedbackGenerator = StandardHapticFeedbackGenerator()
         userDefaultsManager = StandardUserDefaultsManager()
         
@@ -27,19 +33,45 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
             constants: .standard
         )
         
+        loadColorScheme()
+        
         return true
+    }
+    
+    private func loadColorScheme() {
+        if CommandLine.arguments.contains("-lightMode") {
+            colorScheme = .light
+        } else if CommandLine.arguments.contains("-darkMode") {
+            colorScheme = .dark
+        }
     }
 }
 
 @main
 struct SGWeatherApp: App {
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
             ContentView(with: appDelegate.viewModel, constants: .standard)
                 .edgesIgnoringSafeArea(.all)
+                .modifier(ColorSchemeModifier(colorScheme: appDelegate.colorScheme))
+        }
+    }
+}
+
+struct ColorSchemeModifier: ViewModifier {
+    
+    let colorScheme: ColorScheme?
+    
+    func body(content: Content) -> some View {
+        Group {
+            if let colorScheme = colorScheme {
+                content
+                    .environment(\.colorScheme, colorScheme)
+            } else {
+                content
+            }
         }
     }
 }

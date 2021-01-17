@@ -21,3 +21,5 @@
 "uv_high" = "強い";
 "uv_very_high" = "非常に強い";
 "uv_extreme" = "極端に強い";
+
+"day_format" = "d'日'";
