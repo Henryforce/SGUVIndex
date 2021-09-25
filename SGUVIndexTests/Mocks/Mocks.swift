@@ -12,11 +12,9 @@ import Combine
 final class MockUVWeatherService: UVWeatherService {
     var fetchUVWasCalledCount = 0
     var data: UVData = .dataToday
-    func fetchUV() -> AnyPublisher<UVData, Error> {
+    func fetchUV() async throws -> UVData {
         fetchUVWasCalledCount += 1
-        return Just(data)
-            .setFailureType(to: Error.self)
-            .eraseToAnyPublisher()
+        return data
     }
 }
 

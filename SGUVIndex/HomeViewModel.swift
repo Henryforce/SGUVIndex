@@ -16,6 +16,7 @@ enum HomeViewModelUIState {
     case error(String)
 }
 
+@MainActor
 public final class HomeViewModel: ObservableObject {
     
     private let service: UVWeatherService
@@ -38,12 +39,12 @@ public final class HomeViewModel: ObservableObject {
         self.constants = constants
     }
     
-    func viewDidAppear() {
+    func viewDidAppear() async {
         guard case .firstDisplay = uiState else { return }
-        load()
+        await load()
     }
     
-    func scrollWasUpdated(with offset: CGFloat) {
+    func scrollWasUpdated(with offset: CGFloat) async {
         if direction == .none {
             guard !offset.isZero else { return }
             direction = offset > .zero ? .down : .up
@@ -53,47 +54,43 @@ public final class HomeViewModel: ObservableObject {
         
         if direction == .down, offset >= constants.loadOffset {
             direction = .none
-            load()
+            await load()
         }
     }
     
-    private func load() {
+    private func load() async {
         guard canLoad() else { return }
         
         uiState = .loading
         feedbackGenerator.generate(.selectionChanged)
         
-        Just.init(service)
-            .delay(for: .seconds(constants.loadBufferTime), scheduler: RunLoop.main)
-            .flatMap { $0.fetchUV() }
-            .tryMap { data -> UVData in
-                guard let firstItem = data.items.first else { throw APIError.invalid }
-                guard Calendar.singapore.isDateInToday(firstItem.timestamp) else { throw APIError.outdated }
-                return data
+        do {
+            if constants.loadBufferTime > .zero {
+                await Task.sleep(constants.nanoseconds)
             }
-            .handleEvents(receiveOutput: { [weak self] data in
-                self?.handleEventsOnReceiveOutput(data)
-            })
-            .map { data -> [UVWidgetData] in
-                return data.items.first?.records.compactMap { record -> UVWidgetData? in
-                    guard let uvIndex = UVIndex(from: record.value) else { return nil }
-                    return UVWidgetData(date: record.timestamp,
-                                        uvValue: String(record.value),
-                                        uvDescription: uvIndex.name())
-                } ?? []
+            
+            let data = try await service.fetchUV()
+            
+            guard let firstItem = data.items.first else { throw APIError.invalid }
+            guard Calendar.singapore.isDateInToday(firstItem.timestamp) else { throw APIError.outdated }
+            
+            handleEventsOnReceiveOutput(data)
+            
+            let items = data.items.first?.records.compactMap { record -> UVWidgetData? in
+                guard let uvIndex = UVIndex(from: record.value) else { return nil }
+                return UVWidgetData(
+                    date: record.timestamp,
+                    uvValue: String(record.value),
+                    uvDescription: uvIndex.name()
+                )
             }
-            .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { [weak self] completion in
-                guard let self = self else { return }
-                switch completion {
-                case .failure(let error):
-                    self.handleError(error)
-                default:
-                    break
-                }
-            }, receiveValue: { [weak self] value in
-                self?.handleReceivedUVWidgetData(value)
-            }).store(in: &cancellables)
+            
+            guard let validItems = items else { throw APIError.unknown }
+            
+            handleReceivedUVWidgetData(validItems)
+        } catch(let error) {
+            handleError(error)
+        }
     }
     
     private func handleEventsOnReceiveOutput(_ data: UVData) {
@@ -125,12 +122,14 @@ public final class HomeViewModel: ObservableObject {
     }
     
     private func canLoad() -> Bool {
-        switch uiState {
-        case .loading:
-            return false
-        default:
-            return true
-        }
+        guard case .loading = uiState else { return true }
+        return false
     }
     
+}
+
+private extension HomeConstants {
+    var nanoseconds: UInt64 {
+        UInt64(loadBufferTime * 1000000000)
+    }
 }

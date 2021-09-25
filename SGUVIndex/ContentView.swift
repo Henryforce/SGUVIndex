@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 public struct ContentView: View {
     
     @State private var offset: CGFloat = .zero
@@ -24,7 +25,9 @@ public struct ContentView: View {
             displayView(when: viewModel.uiState)
         }.background(Color.appBackground)
         .onAppear() {
-            viewModel.viewDidAppear()
+            Task.init {
+                await viewModel.viewDidAppear()
+            }
         }
         
     }
@@ -59,7 +62,9 @@ public struct ContentView: View {
     
     private func displayViewWhenValidData(_ uvItems: [UVWidgetData]) -> some View {
         ScrollViewOffset { offset in
-            viewModel.scrollWasUpdated(with: offset)
+            Task.init {
+                await viewModel.scrollWasUpdated(with: offset)
+            }
         } content: {
             LazyVStack(alignment: .center, spacing: 4) {
                 buildTitleViews()
@@ -79,7 +84,9 @@ public struct ContentView: View {
     
     private func displayViewWhenError(_ message: String) -> some View {
         ScrollViewOffset { offset in
-            viewModel.scrollWasUpdated(with: offset)
+            Task.init {
+                await viewModel.scrollWasUpdated(with: offset)
+            }
         } content: {
             LazyVStack(alignment: .center, spacing: 0) {
                 buildTitleViews()

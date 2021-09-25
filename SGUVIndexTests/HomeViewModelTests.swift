@@ -17,12 +17,11 @@ final class HomeViewModelTests: XCTestCase {
     private var userDefaults: MockUserDefaultsManager!
     private var cancellables = Set<AnyCancellable>()
     
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() async throws {
         weatherService = MockUVWeatherService()
         feedbackGenerator = MockFeedbackGenerator()
         userDefaults = MockUserDefaultsManager()
-        sut = HomeViewModel(
+        sut = await HomeViewModel(
             with: weatherService,
             feedbackGenerator: feedbackGenerator,
             userDefaults: userDefaults,
@@ -38,25 +37,22 @@ final class HomeViewModelTests: XCTestCase {
         userDefaults = nil
     }
     
-    func testWeatherServiceWithValidDataReturnsAValidDataUIStateWhenViewDidAppearIsCalledOnlyFirstTime() throws {
+    func testWeatherServiceWithValidDataReturnsAValidDataUIStateWhenViewDidAppearIsCalledOnlyFirstTime() async throws {
         // Given
-        let itemsExpectation = expectation(description: "UVItems Expectation")
         var items: [UVWidgetData]?
         
         // When
-        sut.$uiState
+        await sut.$uiState
             .dropFirst()
             .sink(receiveValue: { result in
                 guard case .validData(let uvItems) = result else { return }
                 items = uvItems
-                itemsExpectation.fulfill()
             }).store(in: &cancellables)
-        sut.viewDidAppear()
-        sut.viewDidAppear() // Will do nothing
-        sut.viewDidAppear() // Will do nothing
+        await sut.viewDidAppear()
+        await sut.viewDidAppear() // Will do nothing
+        await sut.viewDidAppear() // Will do nothing
         
         // Then
-        wait(for: [itemsExpectation], timeout: 0.005)
         XCTAssertFalse(items!.isEmpty)
         XCTAssertEqual(weatherService.fetchUVWasCalledCount, 1)
         XCTAssertEqual(feedbackGenerator.generateEventWasCalledCount, 2)
@@ -66,23 +62,20 @@ final class HomeViewModelTests: XCTestCase {
         XCTAssertEqual(userDefaults.setValueForKeyDefaultName!, UserDefaultsKeys.lastUVDataUpdated.rawValue)
     }
 
-    func testWeatherServiceWithValidDataReturnsAValidDataUIStateWhenScrollReachesThreshold() throws {
+    func testWeatherServiceWithValidDataReturnsAValidDataUIStateWhenScrollReachesThreshold() async throws {
         // Given
-        let itemsExpectation = expectation(description: "UVItems Expectation")
         var items: [UVWidgetData]?
         
         // When
-        sut.$uiState
+        await sut.$uiState
             .dropFirst()
             .sink(receiveValue: { result in
                 guard case .validData(let uvItems) = result else { return }
                 items = uvItems
-                itemsExpectation.fulfill()
             }).store(in: &cancellables)
-        sut.scrollWasUpdated(with: HomeConstants.testing.loadOffset)
+        await sut.scrollWasUpdated(with: HomeConstants.testing.loadOffset)
         
         // Then
-        wait(for: [itemsExpectation], timeout: 0.005)
         XCTAssertFalse(items!.isEmpty)
         XCTAssertEqual(weatherService.fetchUVWasCalledCount, 1)
         XCTAssertEqual(feedbackGenerator.generateEventWasCalledCount, 2)
@@ -92,22 +85,19 @@ final class HomeViewModelTests: XCTestCase {
         XCTAssertEqual(userDefaults.setValueForKeyDefaultName!, UserDefaultsKeys.lastUVDataUpdated.rawValue)
     }
     
-    func testWeatherServiceWithOutdatedDataReturnsAnErrorUIStateWhenScrollReachesThreshold() throws {
+    func testWeatherServiceWithOutdatedDataReturnsAnErrorUIStateWhenScrollReachesThreshold() async throws {
         // Given
         weatherService.data = .dataYesterday // outdated, it should be data from today
-        let itemsExpectation = expectation(description: "UVItems Expectation")
         
         // When
-        sut.$uiState
+        await sut.$uiState
             .dropFirst()
             .sink(receiveValue: { result in
                 guard case .error = result else { return }
-                itemsExpectation.fulfill()
             }).store(in: &cancellables)
-        sut.scrollWasUpdated(with: HomeConstants.testing.loadOffset)
+        await sut.scrollWasUpdated(with: HomeConstants.testing.loadOffset)
         
         // Then
-        wait(for: [itemsExpectation], timeout: 0.005)
         XCTAssertEqual(weatherService.fetchUVWasCalledCount, 1)
         XCTAssertEqual(feedbackGenerator.generateEventWasCalledCount, 2)
         XCTAssertEqual(feedbackGenerator.generateEventValueStack.first!, HapticEvent.selectionChanged)

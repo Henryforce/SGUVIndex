@@ -9,20 +9,21 @@ import Foundation
 import Combine
 
 public protocol UVWeatherService {
-    func fetchUV() -> AnyPublisher<UVData, Error>
+    func fetchUV() async throws -> UVData
 }
 
 final class StandardUVWeatherService: UVWeatherService {
     
-    private static let urlString = URL(string: "https://api.data.gov.sg/v1/environment/uv-index")!
+    private let urlString = URL(string: "https://api.data.gov.sg/v1/environment/uv-index")!
+    private let session: URLSession
     
-    init() {}
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
     
-    func fetchUV() -> AnyPublisher<UVData, Error> {
-        return URLSession.shared.dataTaskPublisher(for: Self.urlString)
-            .map(\.data)
-            .decode(type: UVData.self, decoder: JSONDecoder.iso8601Decoder)
-            .eraseToAnyPublisher()
+    func fetchUV() async throws -> UVData {
+        let response = try await session.data(from: urlString)
+        return try JSONDecoder.iso8601Decoder.decode(UVData.self, from: response.0)
     }
     
 }
