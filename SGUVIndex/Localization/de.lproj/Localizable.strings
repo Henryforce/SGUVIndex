@@ -23,3 +23,5 @@
 "uv_extreme" = "Extrem";
 
 "day_format" = "d";
+
+"widget_description" = "Stündliche UV-Index in Singapur";

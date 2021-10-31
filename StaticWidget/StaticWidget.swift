@@ -45,6 +45,7 @@ struct StaticWidget: Widget {
             UVWidgetView(data: entry)
         }
         .configurationDisplayName(Localization.localize(.uvLevels))
-        .description("View UV data")
+        .description(Localization.localize(.widgetDescription))
+        .supportedFamilies([.systemSmall])
     }
 }

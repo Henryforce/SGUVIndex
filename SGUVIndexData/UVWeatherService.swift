@@ -12,9 +12,13 @@ public protocol UVWeatherService {
     func fetchUV() async throws -> UVData
 }
 
+public enum UVWeatherServiceError: Error {
+    case empty
+}
+
 final class StandardUVWeatherService: UVWeatherService {
-    
-    private let urlString = URL(string: "https://api.data.gov.sg/v1/environment/uv-index")!
+    static let urlString = "https://api.data.gov.sg/v1/environment/uv-index"
+    private lazy var url = URL(string: StandardUVWeatherService.urlString)!
     private let session: URLSession
     
     init(session: URLSession = .shared) {
@@ -22,8 +26,23 @@ final class StandardUVWeatherService: UVWeatherService {
     }
     
     func fetchUV() async throws -> UVData {
-        let response = try await session.data(from: urlString)
-        return try JSONDecoder.iso8601Decoder.decode(UVData.self, from: response.0)
+        let response = try await session.data(from: url)
+        let uvData = try JSONDecoder.iso8601Decoder.decode(UVData.self, from: response.0)
+        
+        guard let firstItem = uvData.items.first else {
+            throw UVWeatherServiceError.empty
+        }
+        
+        return UVData(
+            items: [
+                UVItem(
+                    timestamp: firstItem.timestamp,
+                    updateTimestamp: firstItem.updateTimestamp,
+                    records: firstItem.records.sorted { $0.timestamp > $1.timestamp }
+                )
+            ],
+            apiInfo: uvData.apiInfo
+        )
     }
     
 }
