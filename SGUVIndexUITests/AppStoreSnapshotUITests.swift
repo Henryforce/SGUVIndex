@@ -10,7 +10,7 @@ import Combine
 import SGUVIndex
 import XCTest
 
-class AppStoreSnapshotUITests: XCTestCase {
+final class AppStoreSnapshotUITests: XCTestCase {
     
     func testGenerateFastlaneSnapshotsInLightMode() throws {
         let app = XCUIApplication()

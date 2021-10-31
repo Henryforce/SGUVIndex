@@ -27,6 +27,7 @@ enum LocalizationKey: String {
     
     case dayFormat = "day_format"
     
+    case widgetDescription = "widget_description"
 }
 
 struct Localization {

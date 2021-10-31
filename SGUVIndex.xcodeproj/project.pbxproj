@@ -26,6 +26,8 @@
 		392F08722596EE7500F1BD77 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08712596EE7500F1BD77 /* Direction.swift */; };
 		392F08732596EE7500F1BD77 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08712596EE7500F1BD77 /* Direction.swift */; };
 		392F08792596F1BA00F1BD77 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F08782596F1BA00F1BD77 /* Mocks.swift */; };
+		3932DAF6272E52E1000AB59B /* UVWeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932DAF5272E52E1000AB59B /* UVWeatherServiceTests.swift */; };
+		3932DAF8272E610A000AB59B /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932DAF7272E610A000AB59B /* URLProtocolMock.swift */; };
 		399CC88925971C3400FBA6BE /* HapticFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CC88825971C3400FBA6BE /* HapticFeedbackGenerator.swift */; };
 		39A3208425B2DC7C00D10484 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A3208325B2DC7C00D10484 /* SnapshotHelper.swift */; };
 		39AC0EEC25B30AC9006FE5BA /* AppStoreSnapshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AC0EEB25B30AC9006FE5BA /* AppStoreSnapshotUITests.swift */; };
@@ -145,6 +147,8 @@
 		392F086A2596ED3200F1BD77 /* HomeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConstants.swift; sourceTree = "<group>"; };
 		392F08712596EE7500F1BD77 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		392F08782596F1BA00F1BD77 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		3932DAF5272E52E1000AB59B /* UVWeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVWeatherServiceTests.swift; sourceTree = "<group>"; };
+		3932DAF7272E610A000AB59B /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		3962877A2533205800BF0AA7 /* UVWidgetNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVWidgetNetwork.swift; sourceTree = "<group>"; };
 		399CC88825971C3400FBA6BE /* HapticFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackGenerator.swift; sourceTree = "<group>"; };
 		39A3208325B2DC7C00D10484 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -322,6 +326,7 @@
 				39E7D37F259DE74900BD5FAB /* MockUserDefaultsManager.swift */,
 				39E7D38825A01C2400BD5FAB /* MockURLSessionDataTask.swift */,
 				39E7D39525A01C9800BD5FAB /* MockURLSessionWrapper.swift */,
+				3932DAF7272E610A000AB59B /* URLProtocolMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				39E7D38725A01BD200BD5FAB /* Mocks */,
 				392F07DD25945A4F00F1BD77 /* HomeViewModelTests.swift */,
 				39FF77DD25296687003109FD /* UVWidgetNetworkTests.swift */,
+				3932DAF5272E52E1000AB59B /* UVWeatherServiceTests.swift */,
 				39FF77DF25296687003109FD /* Info.plist */,
 			);
 			path = SGUVIndexTests;
@@ -673,8 +679,10 @@
 				39E7D38925A01C2400BD5FAB /* MockURLSessionDataTask.swift in Sources */,
 				39FF77DE25296687003109FD /* UVWidgetNetworkTests.swift in Sources */,
 				392F07DE25945A4F00F1BD77 /* HomeViewModelTests.swift in Sources */,
+				3932DAF6272E52E1000AB59B /* UVWeatherServiceTests.swift in Sources */,
 				39E7D39625A01C9800BD5FAB /* MockURLSessionWrapper.swift in Sources */,
 				392F08792596F1BA00F1BD77 /* Mocks.swift in Sources */,
+				3932DAF8272E610A000AB59B /* URLProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,7 +884,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SGUVIndex/SGUVIndex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SGUVIndex/Preview Content\"";
 				DEVELOPMENT_TEAM = ALNMC88BA5;
 				ENABLE_PREVIEWS = YES;
@@ -902,7 +910,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SGUVIndex/SGUVIndex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SGUVIndex/Preview Content\"";
 				DEVELOPMENT_TEAM = ALNMC88BA5;
 				ENABLE_PREVIEWS = YES;
@@ -966,6 +974,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ALNMC88BA5;
 				INFOPLIST_FILE = SGUVIndexUITests/Info.plist;
@@ -974,6 +983,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.henryforce.dev.sguvindex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
@@ -986,6 +996,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ALNMC88BA5;
 				INFOPLIST_FILE = SGUVIndexUITests/Info.plist;
@@ -994,6 +1005,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.henryforce.dev.sguvindex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
@@ -1009,6 +1021,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = StaticWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ALNMC88BA5;
 				INFOPLIST_FILE = StaticWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1031,6 +1044,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = StaticWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ALNMC88BA5;
 				INFOPLIST_FILE = StaticWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

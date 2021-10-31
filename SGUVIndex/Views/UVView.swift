@@ -22,7 +22,6 @@ struct UVView: View {
         HStack(alignment: .center) {
             Text(date, style: .time)
                 .font(.init(.montserratRegular, size: 12))
-//                .foregroundColor(foregroundColor)
                 .frame(width: 80, alignment: .leading)
                 .padding(.zero)
             
@@ -30,14 +29,12 @@ struct UVView: View {
             
             Text(uvValue)
                 .font(.init(.montserratBold, size: 36))
-//                .foregroundColor(foregroundColor)
                 .frame(width: 80, alignment: .center)
                 .padding(.zero)
             
             Spacer()
             
             Text(uvDescription)
-//                .foregroundColor(foregroundColor)
                 .font(.init(.montserratRegular, size: 12))
                 .frame(width: 80, alignment: .trailing)
                 .padding(.zero)
