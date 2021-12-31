@@ -66,7 +66,7 @@ public final class HomeViewModel: ObservableObject {
         
         do {
             if constants.loadBufferTime > .zero {
-                await Task.sleep(constants.nanoseconds)
+                try await Task.sleep(nanoseconds: constants.nanoseconds)
             }
             
             let data = try await service.fetchUV()

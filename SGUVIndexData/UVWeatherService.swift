@@ -26,7 +26,7 @@ final class StandardUVWeatherService: UVWeatherService {
     }
     
     func fetchUV() async throws -> UVData {
-        let response = try await session.data(from: url)
+        let response = try await session.asyncData(from: url)
         let uvData = try JSONDecoder.iso8601Decoder.decode(UVData.self, from: response.0)
         
         guard let firstItem = uvData.items.first else {
@@ -45,4 +45,24 @@ final class StandardUVWeatherService: UVWeatherService {
         )
     }
     
+}
+
+private extension URLSession {
+    func asyncData(from url: URL) async throws -> (Data, URLResponse) {
+        if #available(iOS 15.0, *) {
+            return try await data(from: url)
+        }
+        // Fallback on earlier versions
+        return try await withCheckedThrowingContinuation { continuation in
+            dataTask(with: url) { data, response, error in
+                if let error = error {
+                    continuation.resume(throwing: error)
+                } else if let data = data, let response = response {
+                    continuation.resume(returning: (data, response))
+                }  else {
+                    continuation.resume(throwing: UVWeatherServiceError.empty)
+                }
+            }.resume()
+        }
+    }
 }
